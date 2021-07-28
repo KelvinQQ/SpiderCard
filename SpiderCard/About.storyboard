@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Whn-Vy-IcU">
+            <objects>
+                <windowController id="bR2-Nu-SnM" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="EAk-bi-uJz">
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <view key="contentView" id="dxa-ee-ohW">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="bR2-Nu-SnM" id="SUH-Sd-iwX"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="lkO-xW-B8l" kind="relationship" relationship="window.shadowedContentViewController" id="Ieb-qL-SEA"/>
+                    </connections>
+                </windowController>
+                <customObject id="GCF-GZ-K14" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259" y="116"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="eb0-wl-ERJ">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="lkO-xW-B8l" customClass="AboutViewController" customModule="SpiderCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Duw-Rr-EnD">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="199"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V3q-SU-f6F">
+                                <rect key="frame" x="134" y="33" width="67" height="32"/>
+                                <buttonCell key="cell" type="push" title="很赞" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JDm-SV-Vds">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissAction:" target="lkO-xW-B8l" id="pki-nD-cSs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="V3q-SU-f6F" firstAttribute="centerX" secondItem="Duw-Rr-EnD" secondAttribute="centerX" id="m5P-SJ-3MN"/>
+                            <constraint firstAttribute="bottom" secondItem="V3q-SU-f6F" secondAttribute="bottom" constant="40" id="qGu-if-h6Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="44k-5c-wz1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375.5" y="55.5"/>
+        </scene>
+    </scenes>
+</document>

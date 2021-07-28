@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		843A340326A1C0FF00782247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A340226A1C0FF00782247 /* AppDelegate.swift */; };
+		843A340726A1C10200782247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A340626A1C10200782247 /* Assets.xcassets */; };
+		843A340A26A1C10200782247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843A340826A1C10200782247 /* Main.storyboard */; };
+		8469A62E26AC01780038F934 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A62D26AC01780038F934 /* MainViewController.swift */; };
+		8469A63126AC01970038F934 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A63026AC01970038F934 /* SettingViewController.swift */; };
+		8469A63426AC01A40038F934 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469A63326AC01A40038F934 /* Setting.storyboard */; };
+		8469A63726AC068C0038F934 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469A63626AC068C0038F934 /* About.storyboard */; };
+		8469A63A26AC06A00038F934 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A63926AC06A00038F934 /* AboutViewController.swift */; };
+		8469A64526AC0B200038F934 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A63D26AC0B200038F934 /* CardView.swift */; };
+		8469A64626AC0B200038F934 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A63E26AC0B200038F934 /* GameManager.swift */; };
+		8469A64726AC0B200038F934 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A63F26AC0B200038F934 /* Card.swift */; };
+		8469A64826AC0B200038F934 /* Poker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A64026AC0B200038F934 /* Poker.swift */; };
+		8469A64926AC0B200038F934 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A64126AC0B200038F934 /* Action.swift */; };
+		8469A64A26AC0B200038F934 /* CardQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A64226AC0B200038F934 /* CardQueueView.swift */; };
+		8469A64C26AC0B200038F934 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A64426AC0B200038F934 /* Preference.swift */; };
+		8469A65426AC49480038F934 /* DeskAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A65326AC49480038F934 /* DeskAreaView.swift */; };
+		8469A65726AD5FE40038F934 /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A65626AD5FE40038F934 /* NSView+Extension.swift */; };
+		84BE1AC426AD8D6800CE5763 /* WaitingAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */; };
+		84BE1AC726AD958200CE5763 /* ScoreAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		843A33FF26A1C0FF00782247 /* SpiderCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiderCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		843A340226A1C0FF00782247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		843A340626A1C10200782247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		843A340926A1C10200782247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		843A340B26A1C10200782247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843A340C26A1C10200782247 /* SpiderCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpiderCard.entitlements; sourceTree = "<group>"; };
+		8469A62D26AC01780038F934 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8469A63026AC01970038F934 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8469A63326AC01A40038F934 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		8469A63626AC068C0038F934 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		8469A63926AC06A00038F934 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		8469A63D26AC0B200038F934 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8469A63E26AC0B200038F934 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		8469A63F26AC0B200038F934 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8469A64026AC0B200038F934 /* Poker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
+		8469A64126AC0B200038F934 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		8469A64226AC0B200038F934 /* CardQueueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardQueueView.swift; sourceTree = "<group>"; };
+		8469A64426AC0B200038F934 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		8469A65326AC49480038F934 /* DeskAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskAreaView.swift; sourceTree = "<group>"; };
+		8469A65626AD5FE40038F934 /* NSView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
+		84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingAreaView.swift; sourceTree = "<group>"; };
+		84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreAreaView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		843A33FC26A1C0FF00782247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		843A33F626A1C0FF00782247 = {
+			isa = PBXGroup;
+			children = (
+				843A340126A1C0FF00782247 /* SpiderCard */,
+				843A340026A1C0FF00782247 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		843A340026A1C0FF00782247 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				843A33FF26A1C0FF00782247 /* SpiderCard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		843A340126A1C0FF00782247 /* SpiderCard */ = {
+			isa = PBXGroup;
+			children = (
+				843A340226A1C0FF00782247 /* AppDelegate.swift */,
+				843A340626A1C10200782247 /* Assets.xcassets */,
+				843A340826A1C10200782247 /* Main.storyboard */,
+				843A340B26A1C10200782247 /* Info.plist */,
+				843A340C26A1C10200782247 /* SpiderCard.entitlements */,
+				8469A62D26AC01780038F934 /* MainViewController.swift */,
+				8469A63026AC01970038F934 /* SettingViewController.swift */,
+				8469A63326AC01A40038F934 /* Setting.storyboard */,
+				8469A63626AC068C0038F934 /* About.storyboard */,
+				8469A63926AC06A00038F934 /* AboutViewController.swift */,
+				8469A64126AC0B200038F934 /* Action.swift */,
+				8469A63F26AC0B200038F934 /* Card.swift */,
+				8469A64226AC0B200038F934 /* CardQueueView.swift */,
+				8469A63D26AC0B200038F934 /* CardView.swift */,
+				8469A63E26AC0B200038F934 /* GameManager.swift */,
+				8469A64026AC0B200038F934 /* Poker.swift */,
+				8469A64426AC0B200038F934 /* Preference.swift */,
+				8469A65326AC49480038F934 /* DeskAreaView.swift */,
+				8469A65626AD5FE40038F934 /* NSView+Extension.swift */,
+				84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */,
+				84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */,
+			);
+			path = SpiderCard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		843A33FE26A1C0FF00782247 /* SpiderCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843A340F26A1C10200782247 /* Build configuration list for PBXNativeTarget "SpiderCard" */;
+			buildPhases = (
+				843A33FB26A1C0FF00782247 /* Sources */,
+				843A33FC26A1C0FF00782247 /* Frameworks */,
+				843A33FD26A1C0FF00782247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpiderCard;
+			productName = SpiderCard;
+			productReference = 843A33FF26A1C0FF00782247 /* SpiderCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		843A33F726A1C0FF00782247 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					843A33FE26A1C0FF00782247 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 843A33FA26A1C0FF00782247 /* Build configuration list for PBXProject "SpiderCard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 843A33F626A1C0FF00782247;
+			productRefGroup = 843A340026A1C0FF00782247 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				843A33FE26A1C0FF00782247 /* SpiderCard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		843A33FD26A1C0FF00782247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843A340726A1C10200782247 /* Assets.xcassets in Resources */,
+				843A340A26A1C10200782247 /* Main.storyboard in Resources */,
+				8469A63726AC068C0038F934 /* About.storyboard in Resources */,
+				8469A63426AC01A40038F934 /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		843A33FB26A1C0FF00782247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843A340326A1C0FF00782247 /* AppDelegate.swift in Sources */,
+				8469A64926AC0B200038F934 /* Action.swift in Sources */,
+				8469A64626AC0B200038F934 /* GameManager.swift in Sources */,
+				84BE1AC426AD8D6800CE5763 /* WaitingAreaView.swift in Sources */,
+				8469A64726AC0B200038F934 /* Card.swift in Sources */,
+				8469A65426AC49480038F934 /* DeskAreaView.swift in Sources */,
+				8469A65726AD5FE40038F934 /* NSView+Extension.swift in Sources */,
+				8469A64A26AC0B200038F934 /* CardQueueView.swift in Sources */,
+				8469A62E26AC01780038F934 /* MainViewController.swift in Sources */,
+				84BE1AC726AD958200CE5763 /* ScoreAreaView.swift in Sources */,
+				8469A63A26AC06A00038F934 /* AboutViewController.swift in Sources */,
+				8469A63126AC01970038F934 /* SettingViewController.swift in Sources */,
+				8469A64526AC0B200038F934 /* CardView.swift in Sources */,
+				8469A64C26AC0B200038F934 /* Preference.swift in Sources */,
+				8469A64826AC0B200038F934 /* Poker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		843A340826A1C10200782247 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843A340926A1C10200782247 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		843A340D26A1C10200782247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		843A340E26A1C10200782247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		843A341026A1C10200782247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpiderCard/SpiderCard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpiderCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		843A341126A1C10200782247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpiderCard/SpiderCard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpiderCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		843A33FA26A1C0FF00782247 /* Build configuration list for PBXProject "SpiderCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843A340D26A1C10200782247 /* Debug */,
+				843A340E26A1C10200782247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843A340F26A1C10200782247 /* Build configuration list for PBXNativeTarget "SpiderCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843A341026A1C10200782247 /* Debug */,
+				843A341126A1C10200782247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 843A33F726A1C0FF00782247 /* Project object */;
+}
