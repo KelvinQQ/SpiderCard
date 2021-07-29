@@ -43,7 +43,7 @@
                                     <items>
                                         <menuItem title="新一局" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="newGameActionWithSender:" target="Ady-hI-5gd" id="IFx-mt-hjT"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>

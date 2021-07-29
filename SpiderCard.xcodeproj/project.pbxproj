@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8405DAC726B2F2D8005A343E /* ScoreAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DAC626B2F2D8005A343E /* ScoreAreaView.xib */; };
 		843A340326A1C0FF00782247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A340226A1C0FF00782247 /* AppDelegate.swift */; };
 		843A340726A1C10200782247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A340626A1C10200782247 /* Assets.xcassets */; };
 		843A340A26A1C10200782247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843A340826A1C10200782247 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8405DAC626B2F2D8005A343E /* ScoreAreaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreAreaView.xib; sourceTree = "<group>"; };
 		843A33FF26A1C0FF00782247 /* SpiderCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiderCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A340226A1C0FF00782247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A340626A1C10200782247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				8469A65626AD5FE40038F934 /* NSView+Extension.swift */,
 				84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */,
 				84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */,
+				8405DAC626B2F2D8005A343E /* ScoreAreaView.xib */,
 			);
 			path = SpiderCard;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843A340726A1C10200782247 /* Assets.xcassets in Resources */,
+				8405DAC726B2F2D8005A343E /* ScoreAreaView.xib in Resources */,
 				843A340A26A1C10200782247 /* Main.storyboard in Resources */,
 				8469A63726AC068C0038F934 /* About.storyboard in Resources */,
 				8469A63426AC01A40038F934 /* Setting.storyboard in Resources */,
