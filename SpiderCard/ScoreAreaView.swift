@@ -18,19 +18,26 @@ class ScoreAreaView: NSView {
         // Drawing code here.
     }
     
+    func setupLabel(label: NSTextField?, text: String) {
+        label?.isBordered = false
+        label?.backgroundColor = NSColor.clear
+        label?.stringValue = text
+        label?.textColor = NSColor.black
+        label?.isEditable = false
+        label?.font = NSFont.systemFont(ofSize: 15)
+    }
+    
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor.yellow.cgColor
+        
         let scoreTipLabel = NSTextField.init()
-        scoreTipLabel.stringValue = "分数: "
-        scoreTipLabel.textColor = NSColor.black
-        scoreTipLabel.isEditable = false
+        setupLabel(label: scoreTipLabel, text:"分数: ")
         self.addSubview(scoreTipLabel)
         scoreLabel = NSTextField.init()
-        scoreLabel?.stringValue = "100"
-        scoreLabel?.isEditable = false
+        setupLabel(label: scoreLabel, text:"100")
         self.addSubview(scoreLabel!)
+        
         let firstStackView = NSStackView.init()
         firstStackView.orientation = .horizontal
         firstStackView.distribution = .fillEqually
@@ -38,14 +45,12 @@ class ScoreAreaView: NSView {
         firstStackView.addArrangedSubview(scoreLabel!)
         
         let stepTipLabel = NSTextField.init()
-        stepTipLabel.stringValue = "步数: "
-        stepTipLabel.textColor = NSColor.black
-        stepTipLabel.isEditable = false
+        setupLabel(label: stepTipLabel, text:"步数: ")
         self.addSubview(stepTipLabel)
         actionsLabel = NSTextField.init()
-        actionsLabel?.stringValue = "100"
-        actionsLabel?.isEditable = false
+        setupLabel(label: actionsLabel, text:"100")
         self.addSubview(actionsLabel!)
+        
         let secondStackView = NSStackView.init()
         secondStackView.orientation = .horizontal
         secondStackView.distribution = .fillEqually
@@ -58,6 +63,10 @@ class ScoreAreaView: NSView {
         stackView.addArrangedSubview(firstStackView)
         stackView.addArrangedSubview(secondStackView)
         self.addSubview(stackView)
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

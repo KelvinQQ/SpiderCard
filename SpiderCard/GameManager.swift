@@ -45,7 +45,7 @@ class GameManager {
         if wash.do(poker: poker) {
             actions.append(wash)
         }
-        print("\(poker.deskArea)")
+//        print("\(poker.deskArea)")
     }
     
     func stop() {
@@ -61,10 +61,6 @@ class GameManager {
         let move = Move(from: from, to: to, index: index)
         if move.do(poker: poker) {
             actions.append(move)
-            let finish = Finish(column: to)
-            if finish.do(poker: poker) {
-                actions.append(finish)
-            }
             return true
         }
         return false
@@ -92,19 +88,24 @@ class GameManager {
         let deal = Deal()
         if deal.do(poker: poker) {
             actions.append(deal)
-            
-            for i in 0..<Poker.DESK_COLUMN_COUNT {
-                let finish = Finish(column: i)
-                if finish.do(poker: poker) {
-                    actions.append(finish)
-                }
-                let transform = Transform(column: i)
-                if transform.do(poker: poker) {
-                    actions.append(transform)
-                }
-            }
             return true
         }
         return false
+    }
+    
+    func checkAllColumn() -> Array<Int> {
+        var finishedColumn : Array<Int> = []
+        for i in 0..<Poker.DESK_COLUMN_COUNT {
+            let finish = Finish(column: i)
+            if finish.do(poker: poker) {
+                actions.append(finish)
+                finishedColumn.append(i)
+            }
+        }
+        return finishedColumn
+    }
+    
+    func isFinished() -> Bool {
+        return poker.finishedArea.count == 8
     }
 }

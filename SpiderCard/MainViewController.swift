@@ -7,11 +7,13 @@
 
 import Cocoa
 
-class MainViewController: NSViewController {
+class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaViewDelegate {
+    
     
     var deskAreaView: DeskAreaView?
     var waitingAreaView: WaitingAreaView?
     var scoreAreaView: ScoreAreaView?
+    var finishedAreaView: FinishedAreaView?
 
     @IBAction func newGameAction(sender: NSMenuItem) {
 
@@ -57,15 +59,43 @@ class MainViewController: NSViewController {
         frame.origin.y = frame.origin.y + self.view.bounds.height - frame.height
         deskAreaView = DeskAreaView.init(frame: frame,
                                          cards: GameManager.instance().deskAreaCards)
-        waitingAreaView = WaitingAreaView.init(cardScale: deskAreaView!.cardScale, cards: GameManager.instance().waittingAreaCards)
+        deskAreaView?.delegate = self
+        
+        waitingAreaView = WaitingAreaView.init(cardScale: deskAreaView!.cardScale,
+                                               cards: GameManager.instance().waittingAreaCards)
         waitingAreaView?.setFrameOrigin(CGPoint.init(x: self.view.bounds.width - waitingAreaView!.bounds.width,
                                                      y: waitingAreaView!.bounds.origin.y))
+        waitingAreaView?.delegate = self
         
-//        scoreAreaView = ScoreAreaView.create
         scoreAreaView = ScoreAreaView.init(frame: CGRect.init(x: self.view.bounds.midX - 100, y: 0, width: 200, height: 100))
+        
+        finishedAreaView = FinishedAreaView.init(cardScale: deskAreaView!.cardScale,
+                                                 cards: GameManager.instance().finishedAreaCards)
+        finishedAreaView?.setFrameOrigin(CGPoint.init(x: 0, y: 0))
+        
         self.view.addSubview(deskAreaView!)
         self.view.addSubview(waitingAreaView!)
         self.view.addSubview(scoreAreaView!)
+        self.view.addSubview(finishedAreaView!)
+    }
+    
+    func didDeal() {
+        
+        let columns = GameManager.instance().checkAllColumn()
+        if columns.count > 0 {
+            print(columns)
+        }
+        
+        deskAreaView?.cards = GameManager.instance().deskAreaCards
+        deskAreaView?.reloadData()
+        
+//        print(GameManager.instance().deskAreaCards)
+//        print(GameManager.instance().waittingAreaCards)
+    }
+    
+    func didFinish() {
+        finishedAreaView?.finishedCards = GameManager.instance().finishedAreaCards
+        finishedAreaView?.reloadData()
     }
     
 }

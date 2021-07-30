@@ -7,11 +7,19 @@
 
 import Cocoa
 
+protocol DeskAreaViewDelegate: class {
+    func didFinish()
+}
+
 class DeskAreaView: NSView {
     
     var cardScale: CGFloat = 1.0
     let kPadding: CGFloat = 10.0
     let kInnerMargin: CGFloat = 20.0
+    
+    var cards: Array<Array<Card>>?
+    
+    weak var delegate: DeskAreaViewDelegate?
     
     var cardWidth: CGFloat {
         return cardScale * 71.0
@@ -33,12 +41,27 @@ class DeskAreaView: NSView {
     
     init(frame: NSRect, cards: Array<Array<Card>>) {
 
+        super.init(frame: frame)
+        self.cards = cards
+        self.wantsLayer = true
+//        self.layer?.backgroundColor = NSColor.red.cgColor
+        
+        reloadData()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func reloadData() {
+        
+        guard let cards = self.cards else {
+            return
+        }
         deskCardViews.removeAll()
         columnFrames.removeAll()
         
-        super.init(frame: frame)
-        self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor.red.cgColor
         for subview in self.subviews {
             subview.removeFromSuperview()
         }
@@ -48,35 +71,40 @@ class DeskAreaView: NSView {
         var columnX = CGFloat(kPadding)
         let columnY = CGFloat(0)
         
+        cardScale = columnWidth / 71.0
+        
         for column in cards {
             let frame = CGRect.init(x: columnX, y: columnY, width: columnWidth, height: columnHeight)
+            let emptyImageView = NSImageView.init(image: NSImage.init(named: "empty")!)
+            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - cardHeight, width: cardWidth, height: cardHeight)
+            self.addSubview(emptyImageView)
+            
             setupColumnCard(frame: frame, cards: column)
             columnFrames.append(frame)
             columnX += (kInnerMargin + columnWidth)
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func setupColumnCard(frame: NSRect, cards: Array<Card>) {
-        let scale = frame.width / 71.0
-        cardScale = scale
         let x: CGFloat = frame.origin.x
         var y: CGFloat = frame.height - cardHeight
         var frames: Array<NSRect> = []
         var views: Array<CardView> = []
+//        var lastCard: Card? = nil
         for (index, card) in cards.enumerated() {
             let imageView = CardView.init(card: card)
             imageView.layer?.zPosition = CGFloat(index)
-            let margin: CGFloat = 20.0
+            let margin: CGFloat = 25.0
+//            if let mode = lastCard?.mode , mode == true {
+//                margin = 20.0
+//            }
             let frame = CGRect.init(x: x, y: y, width: cardWidth, height: cardHeight)
             frames.append(frame)
             views.append(imageView)
             imageView.setFrame(frame: frame)
             self.addSubview(imageView)
             y -= margin
+//            lastCard = card
         }
         deskCardViews.append(views)
     }
@@ -154,6 +182,14 @@ class DeskAreaView: NSView {
         if GameManager.instance().transform(column: selected.columnIndex) {
             deskCardViews[selected.columnIndex].last!.transform()
         }
+        
+        if GameManager.instance().finish(column: columnIndex) {
+            // 收牌
+            self.cards = GameManager.instance().deskAreaCards
+            reloadData()
+            delegate?.didFinish()
+        }
+        
     }
     
     func columnOfPoint(point: CGPoint) -> Int? {

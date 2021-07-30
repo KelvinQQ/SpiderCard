@@ -100,7 +100,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="SpiderCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="960" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>

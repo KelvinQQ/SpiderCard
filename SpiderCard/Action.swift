@@ -63,15 +63,20 @@ class Finish: Action {
     }
     
     func `do`(poker: Poker) -> Bool {
-        var last = poker.deskArea[column][0]
-        if last.point == 0 {
+        guard var last = poker.deskArea[column].last else {
             return false
         }
-        if poker.deskArea[column].count < 13 {
+        
+        if last.point != 1 {
             return false
         }
-        for i in 1...12 {
-            let current = poker.deskArea[column][i]
+        let count = poker.deskArea[column].count
+        
+        if count < 13 {
+            return false
+        }
+        let start = count - 13
+        for current in poker.deskArea[column][start...count-2].reversed() {
             if current.suit != last.suit {
                 return false
             }
@@ -80,9 +85,9 @@ class Finish: Action {
             }
             last = current
         }
-        let tmp = poker.deskArea[column][0...12]
+        let tmp = poker.deskArea[column][start...count-1]
         poker.finishedArea.append(Array.init(tmp))
-        poker.deskArea[column].removeSubrange(0...12)
+        poker.deskArea[column].removeSubrange(start...count-1)
         return true
     }
     
@@ -113,14 +118,16 @@ class Deal: Action {
             return false
         }
         for i in 0..<Poker.DESK_COLUMN_COUNT {
-            poker.deskArea[i].append(poker.waitingArea[poker.waitingArea.count-1][i])
+            let card = poker.waitingArea[poker.waitingArea.count-1][i]
+            card.mode =  true
+            poker.deskArea[i].append(card)
         }
         poker.waitingArea.removeLast()
         return true
     }
     
     func canDeal(poker: Poker) -> Bool {
-        if poker.waitingArea.count < 12 {
+        guard let cards = poker.waitingArea.last, cards.count == 10 else {
             return false
         }
         for i in 0..<Poker.DESK_COLUMN_COUNT {
@@ -128,7 +135,7 @@ class Deal: Action {
             if columns.count == 0 {
                 return false
             }
-            if columns[0].mode == false {
+            if columns.last == nil || columns.last!.mode == false {
                 return false
             }
         }
@@ -193,6 +200,18 @@ class Wash: Action {
         // 4 * 13 * 2 = 104 张牌
         var all = Array<Card>()
 
+//        for i in 0...3 {
+//            for j in 1...13 {
+//                let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
+//                all.append(card)
+//            }
+//        }
+//        for i in 0...3 {
+//            for j in 1...13 {
+//                let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
+//                all.append(card)
+//            }
+//        }
         for i in 0...3 {
             for j in 1...13 {
                 let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
@@ -242,8 +261,7 @@ class Reset: Action {
         poker.waitingArea.removeAll()
         
         poker.waitingArea = [[],[],[],[],[],]
-        poker.finishedArea = [[],[],[],[],
-                              [],[],[],[],]
+        poker.finishedArea = []
         poker.deskArea = [[],[],[],[],[],
                           [],[],[],[],[],]
         return true

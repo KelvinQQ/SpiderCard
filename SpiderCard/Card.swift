@@ -38,7 +38,7 @@ enum Suit: Int {
 class Card: CustomStringConvertible {
     
     var description: String {
-        return "suit = \(suit) point = \(point) mode = \(mode)"
+        return "suit = \(suit) point = \(point)"
     }
     
     var suit = Suit.hearts

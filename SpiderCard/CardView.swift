@@ -36,7 +36,8 @@ class CardView: NSImageView {
         self.init(frame: NSRect.zero)
         self.card = card
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor.blue.cgColor
+//        self.layer?.backgroundColor = NSColor.blue.cgColor
+//        let name = "CARD\(card.suit.rawValue * 13 + card.point)"
         let name = card.mode ? "CARD\(card.suit.rawValue * 13 + card.point)" : "cardback"
         self.image = NSImage.init(named: name)!
     }
