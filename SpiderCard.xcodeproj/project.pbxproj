@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		8405DACA26B42E03005A343E /* FinishedAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedAreaView.swift; sourceTree = "<group>"; };
-		843A33FF26A1C0FF00782247 /* SpiderCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiderCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "蜘蛛纸牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A340226A1C0FF00782247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A340626A1C10200782247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843A340926A1C10200782247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		843A340026A1C0FF00782247 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				843A33FF26A1C0FF00782247 /* SpiderCard.app */,
+				843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			);
 			name = SpiderCard;
 			productName = SpiderCard;
-			productReference = 843A33FF26A1C0FF00782247 /* SpiderCard.app */;
+			productReference = 843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -340,7 +340,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -359,7 +359,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

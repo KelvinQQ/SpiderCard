@@ -196,29 +196,40 @@ class Move: Action {
 }
 
 class Wash: Action {
+    var difficult = Difficult.easy
+    init(difficult: Difficult) {
+        self.difficult = difficult
+    }
+    
     func `do`(poker: Poker) -> Bool {
         // 4 * 13 * 2 = 104 张牌
         var all = Array<Card>()
 
-//        for i in 0...3 {
-//            for j in 1...13 {
-//                let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
-//                all.append(card)
-//            }
-//        }
-//        for i in 0...3 {
-//            for j in 1...13 {
-//                let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
-//                all.append(card)
-//            }
-//        }
-        for i in 0...3 {
-            for j in 1...13 {
-                let card = Card(suit: Suit.init(rawValue: i), point: j, mode: true)
-                all.append(card)
-                all.append(card.copy())
+        for i in 1...13 {
+            switch difficult {
+            case .easy:
+                for _ in 0...7 {
+                    let card = Card(suit: Suit.init(rawValue: 0), point: i, mode: true)
+                    all.append(card)
+                }
+            case .middle:
+                for j in 0...1 {
+                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: true)
+                    all.append(card)
+                    all.append(card.copy())
+                    all.append(card.copy())
+                    all.append(card.copy())
+                }
+            case .hard:
+                for j in 0...3 {
+                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: true)
+                    all.append(card)
+                    all.append(card.copy())
+                }
             }
+            
         }
+
         // 打乱
         all.shuffle()
         // 刚开始分配54张牌 = 4 * 6 + 6 * 5

@@ -41,11 +41,10 @@ class GameManager {
         if reset.do(poker: poker) {
             actions.append(reset)
         }
-        let wash = Wash()
+        let wash = Wash.init(difficult: Preference.instance.difficult)
         if wash.do(poker: poker) {
             actions.append(wash)
         }
-//        print("\(poker.deskArea)")
     }
     
     func stop() {
