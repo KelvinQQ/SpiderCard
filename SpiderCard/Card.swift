@@ -8,28 +8,28 @@
 import Cocoa
 
 enum Suit: Int {
-    // 梅花
-    case clubs = 0
-    // 方块
-    case diamonds
     // 红桃
-    case hearts
+    case hearts = 0
     // 黑桃
     case spades
+    // 梅花
+    case clubs
+    // 方块
+    case diamonds
 
     init(rawValue: Int) {
         let number = abs(rawValue) % 4
         switch number {
         case 0:
-            self = .clubs
-        case 1:
-            self = .diamonds
-        case 2:
             self = .hearts
-        case 3:
+        case 1:
             self = .spades
-        default:
+        case 2:
             self = .clubs
+        case 3:
+            self = .diamonds
+        default:
+            self = .hearts
         }
     }
 }

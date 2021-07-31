@@ -90,21 +90,21 @@ class DeskAreaView: NSView {
         var y: CGFloat = frame.height - cardHeight
         var frames: Array<NSRect> = []
         var views: Array<CardView> = []
-//        var lastCard: Card? = nil
         for (index, card) in cards.enumerated() {
             let imageView = CardView.init(card: card)
             imageView.layer?.zPosition = CGFloat(index)
-            let margin: CGFloat = 25.0
-//            if let mode = lastCard?.mode , mode == true {
-//                margin = 20.0
-//            }
+            var margin: CGFloat = 15.0
             let frame = CGRect.init(x: x, y: y, width: cardWidth, height: cardHeight)
             frames.append(frame)
             views.append(imageView)
             imageView.setFrame(frame: frame)
             self.addSubview(imageView)
+            if card.mode {
+                margin = 25.0
+            } else {
+                margin = 15.0
+            }
             y -= margin
-//            lastCard = card
         }
         deskCardViews.append(views)
     }
@@ -188,6 +188,10 @@ class DeskAreaView: NSView {
             self.cards = GameManager.instance().deskAreaCards
             reloadData()
             delegate?.didFinish()
+            
+            if GameManager.instance().transform(column: columnIndex) {
+                deskCardViews[columnIndex].last!.transform()
+            }
         }
         
     }

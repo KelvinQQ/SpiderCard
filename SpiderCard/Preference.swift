@@ -13,7 +13,7 @@ enum Difficult: Int {
     case hard
     
     init(rawValue: Int) {
-        let value = rawValue % 3 + 1
+        let value = (rawValue - 10) % 3
         switch value {
         case 1:
             self = .easy

@@ -34,7 +34,7 @@
         <!--Setting View Controller-->
         <scene sceneID="d0I-PC-dtm">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" id="ZY0-80-0HK" customClass="SettingViewController" customModule="SpiderCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" id="ZY0-80-0HK" customClass="SettingViewController" customModule="蜘蛛纸牌" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0Jc-yG-BxI">
                         <rect key="frame" x="0.0" y="0.0" width="332" height="197"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="32" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-Yd-RE9">
                                             <rect key="frame" x="20" y="12" width="80" height="112"/>
                                             <subviews>
-                                                <button verticalHuggingPriority="750" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-2K-ltA">
+                                                <button verticalHuggingPriority="750" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-2K-ltA">
                                                     <rect key="frame" x="-1" y="95" width="83" height="18"/>
                                                     <buttonCell key="cell" type="radio" title="初级: 单色" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="0xq-rB-UrM">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -58,7 +58,7 @@
                                                         <action selector="changeDifficultAction:" target="ZY0-80-0HK" id="6Wd-On-8nM"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="EP3-Wb-cm1">
+                                                <button verticalHuggingPriority="750" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="EP3-Wb-cm1">
                                                     <rect key="frame" x="-1" y="47" width="83" height="18"/>
                                                     <buttonCell key="cell" type="radio" title="中级: 双色" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="OnI-JA-TMb">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -68,7 +68,7 @@
                                                         <action selector="changeDifficultAction:" target="ZY0-80-0HK" id="KHl-O6-wF3"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-Ei-yHu">
+                                                <button verticalHuggingPriority="750" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-Ei-yHu">
                                                     <rect key="frame" x="-1" y="-1" width="83" height="18"/>
                                                     <buttonCell key="cell" type="radio" title="高级: 四色" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="HgE-8h-2Dh">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

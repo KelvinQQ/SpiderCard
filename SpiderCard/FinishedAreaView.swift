@@ -31,16 +31,14 @@ class FinishedAreaView: NSView {
             subview.removeFromSuperview()
         }
         
-        let columnWidth = cardScale * 71.0
-        let columnHeight = cardScale * 96.0
+        let columnWidth = cardScale * Const.CARD_WIDTH
+        let columnHeight = cardScale * Const.CARD_HEIGHT
         
         var columnX = CGFloat(0)
         let columnY = CGFloat(0)
         
-        let width = self.bounds.width
-        
         for column in cards {
-            let frame = CGRect.init(x: width - columnWidth - columnX, y: columnY, width: columnWidth, height: columnHeight)
+            let frame = CGRect.init(x: 0 + columnX, y: columnY, width: columnWidth, height: columnHeight)
             if column.count == 0 {
                 continue
             }
@@ -55,10 +53,10 @@ class FinishedAreaView: NSView {
         self.finishedCards = cards
         self.cardScale = cardScale
         
-        let columnWidth = cardScale * 71.0
-        let columnHeight = cardScale * 96.0
+        let columnWidth = cardScale * Const.CARD_WIDTH
+        let columnHeight = cardScale * Const.CARD_HEIGHT
         
-        let width = columnWidth + CGFloat(cards.count - 1) * kInnerMargin
+        let width = columnWidth + CGFloat(7) * kInnerMargin
         let height = columnHeight
         
         super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))

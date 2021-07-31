@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8405DACB26B42E03005A343E /* FinishedAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DACA26B42E03005A343E /* FinishedAreaView.swift */; };
+		8405DAD026B4D7FE005A343E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DACF26B4D7FE005A343E /* Const.swift */; };
 		843A340326A1C0FF00782247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A340226A1C0FF00782247 /* AppDelegate.swift */; };
 		843A340726A1C10200782247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A340626A1C10200782247 /* Assets.xcassets */; };
 		843A340A26A1C10200782247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843A340826A1C10200782247 /* Main.storyboard */; };
@@ -26,10 +27,12 @@
 		8469A65726AD5FE40038F934 /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469A65626AD5FE40038F934 /* NSView+Extension.swift */; };
 		84BE1AC426AD8D6800CE5763 /* WaitingAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */; };
 		84BE1AC726AD958200CE5763 /* ScoreAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */; };
+		84E4973E26B5576D0023AB1B /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4973D26B5576D0023AB1B /* WinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8405DACA26B42E03005A343E /* FinishedAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedAreaView.swift; sourceTree = "<group>"; };
+		8405DACF26B4D7FE005A343E /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "蜘蛛纸牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843A340226A1C0FF00782247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843A340626A1C10200782247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		8469A65626AD5FE40038F934 /* NSView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
 		84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingAreaView.swift; sourceTree = "<group>"; };
 		84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreAreaView.swift; sourceTree = "<group>"; };
+		84E4973D26B5576D0023AB1B /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				84BE1AC326AD8D6800CE5763 /* WaitingAreaView.swift */,
 				84BE1AC626AD958200CE5763 /* ScoreAreaView.swift */,
 				8405DACA26B42E03005A343E /* FinishedAreaView.swift */,
+				8405DACF26B4D7FE005A343E /* Const.swift */,
+				84E4973D26B5576D0023AB1B /* WinView.swift */,
 			);
 			path = SpiderCard;
 			sourceTree = "<group>";
@@ -192,7 +198,9 @@
 				8469A63126AC01970038F934 /* SettingViewController.swift in Sources */,
 				8469A64526AC0B200038F934 /* CardView.swift in Sources */,
 				8469A64C26AC0B200038F934 /* Preference.swift in Sources */,
+				8405DAD026B4D7FE005A343E /* Const.swift in Sources */,
 				8469A64826AC0B200038F934 /* Poker.swift in Sources */,
+				84E4973E26B5576D0023AB1B /* WinView.swift in Sources */,
 				8405DACB26B42E03005A343E /* FinishedAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

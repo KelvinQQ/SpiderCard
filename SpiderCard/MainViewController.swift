@@ -14,6 +14,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     var waitingAreaView: WaitingAreaView?
     var scoreAreaView: ScoreAreaView?
     var finishedAreaView: FinishedAreaView?
+    var winView: WinView?
 
     @IBAction func newGameAction(sender: NSMenuItem) {
 
@@ -23,9 +24,10 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         alert.addButton(withTitle: "取消")
         alert.messageText = "提示"
         alert.informativeText = "清空当前状态重来一局?"
-        let res = alert.runModal()
-        if res == .alertFirstButtonReturn {
-            newGame()
+        alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
+            if returnCode == .alertFirstButtonReturn {
+                self.newGame()
+            }
         }
     }
     
@@ -51,6 +53,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         deskAreaView?.removeFromSuperview()
         waitingAreaView?.removeFromSuperview()
         scoreAreaView?.removeFromSuperview()
+        finishedAreaView?.removeFromSuperview()
         
         GameManager.instance().start()
         
@@ -96,6 +99,21 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     func didFinish() {
         finishedAreaView?.finishedCards = GameManager.instance().finishedAreaCards
         finishedAreaView?.reloadData()
+        
+        if GameManager.instance().isFinished() {
+            let alert = NSAlert.init()
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "确定")
+            alert.messageText = "恭喜"
+            alert.informativeText = "你赢了!!!再来一局!!"
+            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
+                if returnCode == .alertFirstButtonReturn {
+                    self.newGame()
+                }
+            }
+        }
     }
+    
+    
     
 }

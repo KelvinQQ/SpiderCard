@@ -21,13 +21,13 @@ class SettingViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        let easyButton = self.view.viewWithTag(10) as! NSButton
+        let easyButton = self.view.viewWithTag(11) as! NSButton
         easyButton.state = Preference.instance.difficult == .easy ? .on : .off
         
-        let middleButton = self.view.viewWithTag(11) as! NSButton
+        let middleButton = self.view.viewWithTag(12) as! NSButton
         middleButton.state = Preference.instance.difficult == .middle ? .on : .off
         
-        let hardButton = self.view.viewWithTag(12) as! NSButton
+        let hardButton = self.view.viewWithTag(13) as! NSButton
         hardButton.state = Preference.instance.difficult == .hard ? .on : .off
     }
     
