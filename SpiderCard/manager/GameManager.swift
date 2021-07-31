@@ -7,9 +7,9 @@
 
 import Cocoa
 
-class GameManager {
+class GameManager: NSObject {
     var actions: Array<Action> = []
-    var poker: Poker = Poker()
+    @objc dynamic var poker: Poker = Poker()
     
     private static var singleton: GameManager?
     
@@ -31,7 +31,8 @@ class GameManager {
         }
         return singleton!
     }
-    private init() {
+    
+    private override init() {
         
     }
     
@@ -60,6 +61,8 @@ class GameManager {
         let move = Move(from: from, to: to, index: index)
         if move.do(poker: poker) {
             actions.append(move)
+            poker.score -= 1
+            poker.actions += 1
             return true
         }
         return false
@@ -78,6 +81,7 @@ class GameManager {
         let finish = Finish(column: column)
         if finish.do(poker: poker) {
             actions.append(finish)
+            poker.score += 100
             return true
         }
         return false

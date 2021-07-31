@@ -35,7 +35,7 @@ class ScoreAreaView: NSView {
         setupLabel(label: scoreTipLabel, text:"分数: ")
         self.addSubview(scoreTipLabel)
         scoreLabel = NSTextField.init()
-        setupLabel(label: scoreLabel, text:"100")
+        setupLabel(label: scoreLabel, text:"500")
         self.addSubview(scoreLabel!)
         
         let firstStackView = NSStackView.init()
@@ -48,7 +48,7 @@ class ScoreAreaView: NSView {
         setupLabel(label: stepTipLabel, text:"步数: ")
         self.addSubview(stepTipLabel)
         actionsLabel = NSTextField.init()
-        setupLabel(label: actionsLabel, text:"100")
+        setupLabel(label: actionsLabel, text:"0")
         self.addSubview(actionsLabel!)
         
         let secondStackView = NSStackView.init()
@@ -67,6 +67,13 @@ class ScoreAreaView: NSView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+    }
+    
+    func upate(score: Int) {
+        scoreLabel?.stringValue = "\(score)"
+    }
+    func upate(actions: Int) {
+        actionsLabel?.stringValue = "\(actions)"
     }
     
     required init?(coder: NSCoder) {

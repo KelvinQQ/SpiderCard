@@ -15,6 +15,9 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     var scoreAreaView: ScoreAreaView?
     var finishedAreaView: FinishedAreaView?
     var winView: WinView?
+    
+    var actionsObservation: NSKeyValueObservation?
+    var scoreObservation: NSKeyValueObservation?
 
     @IBAction func newGameAction(sender: NSMenuItem) {
 
@@ -47,6 +50,27 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         newGame()
         
+        actionsObservation = GameManager.instance().observe(\.poker.actions, options: .new, changeHandler: { (obj, value) in
+            if let actions = value.newValue {
+                self.scoreAreaView?.upate(actions: actions)
+            }
+        })
+        
+        scoreObservation = GameManager.instance().observe(\.poker.score, options: .new, changeHandler: { (obj, value) in
+            if let score = value.newValue {
+                self.scoreAreaView?.upate(score: score)
+            }
+        })
+        
+    }
+    
+    deinit {
+        if let ob = actionsObservation {
+            self.removeObserver(ob, forKeyPath: "poker.actions")
+        }
+        if let ob = scoreObservation {
+            self.removeObserver(ob, forKeyPath: "poker.score")
+        }
     }
     
     func newGame() {

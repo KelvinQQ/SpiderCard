@@ -109,18 +109,18 @@
 		84E4974926B5617F0023AB1B /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				84E4974A26B5617F0023AB1B /* WaitingAreaView.swift */,
-				84E4974B26B5617F0023AB1B /* SettingViewController.swift */,
-				84E4974C26B5617F0023AB1B /* Setting.storyboard */,
-				84E4974D26B5617F0023AB1B /* ScoreAreaView.swift */,
-				84E4974E26B5617F0023AB1B /* CardView.swift */,
-				84E4974F26B5617F0023AB1B /* MainViewController.swift */,
-				84E4975026B5617F0023AB1B /* WinView.swift */,
-				84E4975126B5617F0023AB1B /* DeskAreaView.swift */,
-				84E4975226B5617F0023AB1B /* Main.storyboard */,
-				84E4975326B5617F0023AB1B /* FinishedAreaView.swift */,
 				84E4975426B5617F0023AB1B /* About.storyboard */,
 				84E4975526B5617F0023AB1B /* AboutViewController.swift */,
+				84E4974E26B5617F0023AB1B /* CardView.swift */,
+				84E4975126B5617F0023AB1B /* DeskAreaView.swift */,
+				84E4975326B5617F0023AB1B /* FinishedAreaView.swift */,
+				84E4975226B5617F0023AB1B /* Main.storyboard */,
+				84E4974F26B5617F0023AB1B /* MainViewController.swift */,
+				84E4974D26B5617F0023AB1B /* ScoreAreaView.swift */,
+				84E4974C26B5617F0023AB1B /* Setting.storyboard */,
+				84E4974B26B5617F0023AB1B /* SettingViewController.swift */,
+				84E4974A26B5617F0023AB1B /* WaitingAreaView.swift */,
+				84E4975026B5617F0023AB1B /* WinView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";

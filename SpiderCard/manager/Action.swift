@@ -130,9 +130,15 @@ class Deal: Action {
         guard let cards = poker.waitingArea.last, cards.count == 10 else {
             return false
         }
+        let total = poker.deskArea
+            .map { (cards) -> Int in
+                return cards.count
+            }
+            .reduce(0, +)
+        
         for i in 0..<Poker.DESK_COLUMN_COUNT {
             let columns = poker.deskArea[i]
-            if columns.count == 0 {
+            if columns.count == 0 && total >= 10 {
                 return false
             }
             if columns.last == nil || columns.last!.mode == false {
@@ -237,7 +243,7 @@ class Wash: Action {
             for j in 0...5 {
                 let card = all[j + i * 6]
                 if j < 5 {
-                    card.mode = false
+//                    card.mode = false
                 }
                 poker.deskArea[i].append(card)
             }
@@ -247,7 +253,7 @@ class Wash: Action {
             for j in 0...4 {
                 let card = all[j + (i-4) * 5]
                 if j < 4 {
-                    card.mode = false
+//                    card.mode = false
                 }
                 poker.deskArea[i].append(card)
             }
@@ -257,7 +263,7 @@ class Wash: Action {
         for i in 0...4 {
             for j in 0...9 {
                 let card = all[j + i * 10]
-                card.mode = false
+//                card.mode = false
                 poker.waitingArea[i].append(card)
             }
         }
@@ -275,6 +281,8 @@ class Reset: Action {
         poker.finishedArea = []
         poker.deskArea = [[],[],[],[],[],
                           [],[],[],[],[],]
+        poker.score = 500
+        poker.actions = 0
         return true
     }
 }
