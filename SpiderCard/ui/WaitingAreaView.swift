@@ -19,8 +19,6 @@ class WaitingAreaView: NSView {
     var waitingCards: Array<Array<Card>>?
     var selectedCard: CardView?
     
-    var cardScale: CGFloat = 1.0
-    
     weak var delegate: WaitingAreaViewDelegate?
 
     override func draw(_ dirtyRect: NSRect) {
@@ -39,8 +37,8 @@ class WaitingAreaView: NSView {
             subview.removeFromSuperview()
         }
         
-        let columnWidth = cardScale * 71.0
-        let columnHeight = cardScale * 96.0
+        let columnWidth = Const.CARD_WIDTH
+        let columnHeight = Const.CARD_HEIGHT
         
         var columnX = CGFloat(0)
         let columnY = CGFloat(0)
@@ -56,12 +54,11 @@ class WaitingAreaView: NSView {
         }
     }
     
-    init(cardScale: CGFloat, cards: Array<Array<Card>>) {
+    init(cards: Array<Array<Card>>) {
         self.waitingCards = cards
-        self.cardScale = cardScale
         
-        let columnWidth = cardScale * 71.0
-        let columnHeight = cardScale * 96.0
+        let columnWidth = Const.CARD_WIDTH
+        let columnHeight = Const.CARD_HEIGHT
         
         let width = columnWidth + CGFloat(cards.count - 1) * kInnerMargin
         let height = columnHeight

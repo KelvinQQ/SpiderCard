@@ -17,17 +17,6 @@ class CardView: NSImageView {
         // Drawing code here.
     }
     
-    var _tag = 0
-    
-    override var tag: Int {
-        get {
-            return _tag
-        }
-        set {
-            _tag = newValue
-        }
-    }
-    
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
     }

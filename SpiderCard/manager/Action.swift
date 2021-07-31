@@ -243,7 +243,7 @@ class Wash: Action {
             for j in 0...5 {
                 let card = all[j + i * 6]
                 if j < 5 {
-//                    card.mode = false
+                    card.mode = false
                 }
                 poker.deskArea[i].append(card)
             }
@@ -253,7 +253,7 @@ class Wash: Action {
             for j in 0...4 {
                 let card = all[j + (i-4) * 5]
                 if j < 4 {
-//                    card.mode = false
+                    card.mode = false
                 }
                 poker.deskArea[i].append(card)
             }
@@ -263,7 +263,7 @@ class Wash: Action {
         for i in 0...4 {
             for j in 0...9 {
                 let card = all[j + i * 10]
-//                card.mode = false
+                card.mode = false
                 poker.waitingArea[i].append(card)
             }
         }

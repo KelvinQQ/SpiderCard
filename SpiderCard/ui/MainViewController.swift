@@ -9,7 +9,6 @@ import Cocoa
 
 class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaViewDelegate {
     
-    
     var deskAreaView: DeskAreaView?
     var waitingAreaView: WaitingAreaView?
     var scoreAreaView: ScoreAreaView?
@@ -83,22 +82,20 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         var frame = self.view.bounds
         frame.size.height = frame.height * 0.7
-        frame.origin.y = frame.origin.y + self.view.bounds.height - frame.height
+        frame.origin.y = frame.origin.y + self.view.bounds.height - frame.height - Const.TOP_MARGIN
         deskAreaView = DeskAreaView.init(frame: frame,
                                          cards: GameManager.instance().deskAreaCards)
         deskAreaView?.delegate = self
         
-        waitingAreaView = WaitingAreaView.init(cardScale: deskAreaView!.cardScale,
-                                               cards: GameManager.instance().waittingAreaCards)
-        waitingAreaView?.setFrameOrigin(CGPoint.init(x: self.view.bounds.width - waitingAreaView!.bounds.width,
-                                                     y: waitingAreaView!.bounds.origin.y))
+        waitingAreaView = WaitingAreaView.init(cards: GameManager.instance().waittingAreaCards)
+        waitingAreaView?.setFrameOrigin(CGPoint.init(x: self.view.bounds.width - waitingAreaView!.bounds.width - 20,
+                                                     y: waitingAreaView!.bounds.origin.y + Const.BOTTOM_MARGIN))
         waitingAreaView?.delegate = self
         
-        scoreAreaView = ScoreAreaView.init(frame: CGRect.init(x: self.view.bounds.midX - 100, y: 0, width: 200, height: 100))
+        scoreAreaView = ScoreAreaView.init(frame: CGRect.init(x: self.view.bounds.midX - 100, y: Const.BOTTOM_MARGIN, width: 200, height: 100))
         
-        finishedAreaView = FinishedAreaView.init(cardScale: deskAreaView!.cardScale,
-                                                 cards: GameManager.instance().finishedAreaCards)
-        finishedAreaView?.setFrameOrigin(CGPoint.init(x: 0, y: 0))
+        finishedAreaView = FinishedAreaView.init(cards: GameManager.instance().finishedAreaCards)
+        finishedAreaView?.setFrameOrigin(CGPoint.init(x: 20, y: Const.BOTTOM_MARGIN))
         
         self.view.addSubview(deskAreaView!)
         self.view.addSubview(waitingAreaView!)

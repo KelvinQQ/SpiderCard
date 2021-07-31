@@ -13,21 +13,11 @@ protocol DeskAreaViewDelegate: class {
 
 class DeskAreaView: NSView {
     
-    var cardScale: CGFloat = 1.0
-    let kPadding: CGFloat = 10.0
     let kInnerMargin: CGFloat = 20.0
     
     var cards: Array<Array<Card>>?
     
     weak var delegate: DeskAreaViewDelegate?
-    
-    var cardWidth: CGFloat {
-        return cardScale * 71.0
-    }
-    
-    var cardHeight: CGFloat {
-        return cardScale * 96.0
-    }
     
     var columnFrames: Array<NSRect> = []
     var selectedInfo: (columnIndex: Int, cardIndex: Int)?
@@ -65,36 +55,35 @@ class DeskAreaView: NSView {
         for subview in self.subviews {
             subview.removeFromSuperview()
         }
-        
-        let columnWidth = (frame.size.width - CGFloat(2 * kPadding + 9 * kInnerMargin)) / 10.0
+    
+        let margin = (frame.size.width - 10 * Const.CARD_WIDTH - Const.LEFT_MARGIN - Const.RIGHT_MARGIN) / 9.0
         let columnHeight = frame.size.height
-        var columnX = CGFloat(kPadding)
+        var columnX = CGFloat(Const.LEFT_MARGIN)
         let columnY = CGFloat(0)
         
-        cardScale = columnWidth / 71.0
-        
         for column in cards {
-            let frame = CGRect.init(x: columnX, y: columnY, width: columnWidth, height: columnHeight)
+            let frame = CGRect.init(x: columnX, y: columnY, width: Const.CARD_WIDTH, height: columnHeight)
             let emptyImageView = NSImageView.init(image: NSImage.init(named: "empty")!)
-            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - cardHeight, width: cardWidth, height: cardHeight)
+            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_WIDTH,
+                                               width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
             self.addSubview(emptyImageView)
             
             setupColumnCard(frame: frame, cards: column)
             columnFrames.append(frame)
-            columnX += (kInnerMargin + columnWidth)
+            columnX += (margin + Const.CARD_WIDTH)
         }
     }
     
     func setupColumnCard(frame: NSRect, cards: Array<Card>) {
         let x: CGFloat = frame.origin.x
-        var y: CGFloat = frame.height - cardHeight
+        var y: CGFloat = frame.height - Const.CARD_HEIGHT
         var frames: Array<NSRect> = []
         var views: Array<CardView> = []
         for (index, card) in cards.enumerated() {
             let imageView = CardView.init(card: card)
             imageView.layer?.zPosition = CGFloat(index)
             var margin: CGFloat = 15.0
-            let frame = CGRect.init(x: x, y: y, width: cardWidth, height: cardHeight)
+            let frame = CGRect.init(x: x, y: y, width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
             frames.append(frame)
             views.append(imageView)
             imageView.setFrame(frame: frame)
@@ -164,7 +153,7 @@ class DeskAreaView: NSView {
         
         let lastCard = lastCardViewOf(columnIndex: columnIndex)
         let lastFrame = lastCard?.frame
-        var origin = CGPoint.init(x: columnFrames[columnIndex].origin.x, y: columnFrames[columnIndex].height - cardHeight)
+        var origin = CGPoint.init(x: columnFrames[columnIndex].origin.x, y: columnFrames[columnIndex].height - Const.CARD_HEIGHT)
         if lastFrame != nil {
             origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - 20)
         }
