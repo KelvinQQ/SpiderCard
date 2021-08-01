@@ -64,7 +64,7 @@ class DeskAreaView: NSView {
         for column in cards {
             let frame = CGRect.init(x: columnX, y: columnY, width: Const.CARD_WIDTH, height: columnHeight)
             let emptyImageView = NSImageView.init(image: NSImage.init(named: "empty")!)
-            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_WIDTH,
+            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_HEIGHT,
                                                width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
             self.addSubview(emptyImageView)
             
