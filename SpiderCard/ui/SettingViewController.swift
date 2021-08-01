@@ -8,13 +8,20 @@
 import Cocoa
 
 class SettingViewController: NSViewController {
+    
+    var selectedDifficult = Preference.instance.difficult
 
     @IBAction func saveAction(_ sender: NSButton) {
+        Preference.instance.difficult = selectedDifficult
         Preference.instance.save()
         self.dismiss(self)
     }
+
+    @IBAction func cancelAction(_ sender: NSButton) {
+        self.dismiss(self)
+    }
     @IBAction func changeDifficultAction(_ sender: NSButton) {
-        Preference.instance.difficult = Difficult.init(rawValue: sender.tag)
+        selectedDifficult = Difficult.init(rawValue: sender.tag)
         
     }
     override func viewDidLoad() {
