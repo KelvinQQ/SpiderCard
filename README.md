@@ -23,6 +23,8 @@
 
 ![image](./images/shot_2.png)
 
+![image](./images/shot_3.png)
+
 ## 游戏下载
 
 * `clone` 源码后自行编译运行
