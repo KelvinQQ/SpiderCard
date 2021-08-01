@@ -144,6 +144,7 @@
 				843A33FB26A1C0FF00782247 /* Sources */,
 				843A33FC26A1C0FF00782247 /* Frameworks */,
 				843A33FD26A1C0FF00782247 /* Resources */,
+				84ADFB4126B6390A000A93E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -200,6 +201,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84ADFB4126B6390A000A93E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=`date +\"%Y%m%d%H%M\"`\necho ${buildNumber}\n/usr/libexec/PlistBuddy -c \"Set CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		843A33FB26A1C0FF00782247 /* Sources */ = {
@@ -359,7 +380,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -382,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_VERSION = 5.0;
