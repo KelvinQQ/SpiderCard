@@ -14,6 +14,7 @@ protocol DeskAreaViewDelegate: class {
 class DeskAreaView: NSView {
     
     var cards: Array<Array<Card>>?
+    var waitingAreaRect: CGRect?
     
     weak var delegate: DeskAreaViewDelegate?
     
@@ -101,6 +102,10 @@ class DeskAreaView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         let location = self.convert(event.locationInWindow, from: nil)
+        if let contain = waitingAreaRect?.contains(location), contain {
+            super.mouseDown(with: event)
+            return
+        }
         print("mouseDown \(location)")
         
         guard let tmp = indexBy(point: location) else {
@@ -133,6 +138,11 @@ class DeskAreaView: NSView {
     
     override func mouseUp(with event: NSEvent) {
         let location = self.convert(event.locationInWindow, from: nil)
+        if let contain = waitingAreaRect?.contains(location), contain {
+            super.mouseUp(with: event)
+            return
+        }
+        
         guard let columnIndex = columnOfPoint(point: location) else {
             resetPosition()
             return
@@ -266,5 +276,9 @@ class DeskAreaView: NSView {
     }
     func lastCardViewOf(columnIndex: Int) -> CardView? {
         return deskCardViews[columnIndex].last
+    }
+    
+    func setWaitingAreaRect(rect: CGRect) {
+        waitingAreaRect = rect
     }
 }

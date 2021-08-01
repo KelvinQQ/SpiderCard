@@ -22,4 +22,13 @@ class Const {
     static let VERTICAL_CARD_INNER_MARGIN_BIG: CGFloat = 25.0
     static let VERTICAL_CARD_INNER_MARGIN_SMALL: CGFloat = 15.0
     static let HORIZONTAL_CARD_INNER_MARGIN_SMALL: CGFloat = 15.0
+    
+    
+    // 等待区
+    static let WAITING_AREA_VIEW_WIDTH: CGFloat = Const.CARD_WIDTH + CGFloat(4) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL
+    static let WAITING_AREA_VIEW_HEIGHT: CGFloat = Const.CARD_HEIGHT
+    
+    // 结束区
+    static let FINISHED_AREA_VIEW_WIDTH: CGFloat = Const.CARD_WIDTH + CGFloat(7) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL
+    static let FINISHED_AREA_VIEW_HEIGHT: CGFloat = Const.CARD_HEIGHT
 }

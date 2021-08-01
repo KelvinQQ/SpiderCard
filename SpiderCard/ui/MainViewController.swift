@@ -99,6 +99,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         self.view.addSubview(scoreAreaView!)
         self.view.addSubview(finishedAreaView!)
         self.view.addSubview(deskAreaView!)
+        deskAreaView?.setWaitingAreaRect(rect: waitingAreaView!.frame)
     }
     
     func didDeal() {
@@ -129,7 +130,4 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
             }
         }
     }
-    
-    
-    
 }

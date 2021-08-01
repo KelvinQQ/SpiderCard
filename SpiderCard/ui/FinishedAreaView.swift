@@ -47,13 +47,7 @@ class FinishedAreaView: NSView {
     init(cards: Array<Array<Card>>) {
         self.finishedCards = cards
         
-        let columnWidth = Const.CARD_WIDTH
-        let columnHeight = Const.CARD_HEIGHT
-        
-        let width = columnWidth + CGFloat(7) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL
-        let height = columnHeight
-        
-        super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))
+        super.init(frame: CGRect.init(x: 0, y: 0, width: Const.FINISHED_AREA_VIEW_WIDTH, height: Const.FINISHED_AREA_VIEW_HEIGHT))
         self.wantsLayer = true
 //        self.layer?.backgroundColor = NSColor.red.cgColor
         
