@@ -80,6 +80,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         finishedAreaView?.removeFromSuperview()
         
         GameManager.instance().start()
+        AudioPlayer.instance().play(type: .launch)
         
         deskAreaView = DeskAreaView.init(frame: self.view.bounds,
                                          cards: GameManager.instance().deskAreaCards)
@@ -114,10 +115,12 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     }
     
     func didFinish() {
+        
         finishedAreaView?.finishedCards = GameManager.instance().finishedAreaCards
         finishedAreaView?.reloadData()
         
         if GameManager.instance().isFinished() {
+            AudioPlayer.instance().play(type: .success)
             let alert = NSAlert.init()
             alert.alertStyle = .warning
             alert.addButton(withTitle: "确定")

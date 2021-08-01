@@ -100,6 +100,8 @@ class DeskAreaView: NSView {
         deskCardViews.append(views)
     }
     
+    
+    /// 鼠标事件
     override func mouseDown(with event: NSEvent) {
         let location = self.convert(event.locationInWindow, from: nil)
         if let contain = waitingAreaRect?.contains(location), contain {
@@ -115,6 +117,8 @@ class DeskAreaView: NSView {
         if !GameManager.instance().canPicker(from: tmp.columnIndex, index: tmp.cardIndex) {
             return
         }
+        
+        AudioPlayer.instance().play(type: .pickup)
         
         self.selectedInfo = tmp
 
@@ -143,12 +147,15 @@ class DeskAreaView: NSView {
             return
         }
         
-        guard let columnIndex = columnOfPoint(point: location) else {
-            resetPosition()
+        
+        guard let selected = self.selectedInfo else {
             return
         }
         
-        guard let selected = self.selectedInfo else {
+        AudioPlayer.instance().play(type: .putdown)
+        
+        guard let columnIndex = columnOfPoint(point: location) else {
+            resetPosition()
             return
         }
         
@@ -164,7 +171,7 @@ class DeskAreaView: NSView {
         
         let lastCard = lastCardViewOf(columnIndex: columnIndex)
         let lastFrame = lastCard?.frame
-        var origin = CGPoint.init(x: columnFrames[columnIndex].origin.x, y: columnFrames[columnIndex].height - Const.CARD_HEIGHT)
+        var origin = CGPoint.init(x: columnFrames[columnIndex].origin.x, y: columnFrames[columnIndex].height - Const.CARD_HEIGHT - Const.TOP_MARGIN)
         if lastFrame != nil {
             origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - Const.VERTICAL_CARD_INNER_MARGIN_BIG)
         }
