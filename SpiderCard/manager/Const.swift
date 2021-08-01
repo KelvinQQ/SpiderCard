@@ -23,6 +23,9 @@ class Const {
     static let VERTICAL_CARD_INNER_MARGIN_SMALL: CGFloat = 15.0
     static let HORIZONTAL_CARD_INNER_MARGIN_SMALL: CGFloat = 15.0
     
+    static let DESK_COLUMN_COUNT = 10
+    static let DESK_HEAD_COUNT = 6
+    static let DES_TAIL_COUNT = 5
     
     // 等待区
     static let WAITING_AREA_VIEW_WIDTH: CGFloat = Const.CARD_WIDTH + CGFloat(4) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL

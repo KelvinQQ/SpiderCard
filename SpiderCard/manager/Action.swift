@@ -117,7 +117,7 @@ class Deal: Action {
         if !canDeal(poker: poker) {
             return false
         }
-        for i in 0..<Poker.DESK_COLUMN_COUNT {
+        for i in 0..<Const.DESK_COLUMN_COUNT {
             let card = poker.waitingArea[poker.waitingArea.count-1][i]
             card.mode =  true
             poker.deskArea[i].append(card)
@@ -136,7 +136,7 @@ class Deal: Action {
             }
             .reduce(0, +)
         
-        for i in 0..<Poker.DESK_COLUMN_COUNT {
+        for i in 0..<Const.DESK_COLUMN_COUNT {
             let columns = poker.deskArea[i]
             if columns.count == 0 && total >= 10 {
                 return false
@@ -215,12 +215,12 @@ class Wash: Action {
             switch difficult {
             case .easy:
                 for _ in 0...7 {
-                    let card = Card(suit: Suit.init(rawValue: 0), point: i, mode: true)
+                    let card = Card(suit: Suit.init(rawValue: 0), point: i, mode: false)
                     all.append(card)
                 }
             case .middle:
                 for j in 0...1 {
-                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: true)
+                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: false)
                     all.append(card)
                     all.append(card.copy())
                     all.append(card.copy())
@@ -228,7 +228,7 @@ class Wash: Action {
                 }
             case .hard:
                 for j in 0...3 {
-                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: true)
+                    let card = Card(suit: Suit.init(rawValue: j), point: i, mode: false)
                     all.append(card)
                     all.append(card.copy())
                 }
@@ -239,26 +239,20 @@ class Wash: Action {
         // 打乱
         all.shuffle()
         // 刚开始分配54张牌 = 4 * 6 + 6 * 5
-        for i in 0...3 {
-            for j in 0...5 {
-                let card = all[j + i * 6]
-                if j < 5 {
-                    card.mode = false
-                }
-                poker.deskArea[i].append(card)
+        for i in 0...53 {
+            let column = i % 10
+            let card = all[i]
+            if column >= 4 && poker.deskArea[column].count >= 4 {
+                card.mode = true
             }
-        }
-        all.removeSubrange(...23)
-        for i in 4...9 {
-            for j in 0...4 {
-                let card = all[j + (i-4) * 5]
-                if j < 4 {
-                    card.mode = false
-                }
-                poker.deskArea[i].append(card)
+            if column <= 3 && poker.deskArea[column].count >= 5 {
+                card.mode = true
             }
+            poker.deskArea[column].append(card)
         }
-        all.removeSubrange(...29)
+        
+        all.removeSubrange(...53)
+        
         // 开始分配剩余50张牌
         for i in 0...4 {
             for j in 0...9 {

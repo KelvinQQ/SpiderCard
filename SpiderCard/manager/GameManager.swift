@@ -98,7 +98,7 @@ class GameManager: NSObject {
     
     func checkAllColumn() -> Array<Int> {
         var finishedColumn : Array<Int> = []
-        for i in 0..<Poker.DESK_COLUMN_COUNT {
+        for i in 0..<Const.DESK_COLUMN_COUNT {
             let finish = Finish(column: i)
             if finish.do(poker: poker) {
                 actions.append(finish)

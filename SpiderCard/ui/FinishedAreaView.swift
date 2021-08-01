@@ -9,7 +9,7 @@ import Cocoa
 
 class FinishedAreaView: NSView {
     
-    var finishedCards: Array<Array<Card>>?
+    var cards: Array<Array<Card>>?
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -18,7 +18,7 @@ class FinishedAreaView: NSView {
     }
     
     func reloadData() {
-        guard let cards = finishedCards else {
+        guard let cards = cards else {
             return
         }
         
@@ -45,7 +45,7 @@ class FinishedAreaView: NSView {
     }
     
     init(cards: Array<Array<Card>>) {
-        self.finishedCards = cards
+        self.cards = cards
         
         super.init(frame: CGRect.init(x: 0, y: 0, width: Const.FINISHED_AREA_VIEW_WIDTH, height: Const.FINISHED_AREA_VIEW_HEIGHT))
         self.wantsLayer = true

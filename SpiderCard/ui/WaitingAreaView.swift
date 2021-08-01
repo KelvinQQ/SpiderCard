@@ -13,8 +13,7 @@ protocol WaitingAreaViewDelegate: class {
 
 class WaitingAreaView: NSView {
     
-    var waitingCards: Array<Array<Card>>?
-    var selectedCard: CardView?
+    var cards: Array<Array<Card>>?
     
     weak var delegate: WaitingAreaViewDelegate?
 
@@ -26,7 +25,7 @@ class WaitingAreaView: NSView {
     
     func reloadData() {
         
-        guard let cards = waitingCards else {
+        guard let cards = cards else {
             return
         }
         
@@ -52,7 +51,7 @@ class WaitingAreaView: NSView {
     }
     
     init(cards: Array<Array<Card>>) {
-        self.waitingCards = cards
+        self.cards = cards
         
         super.init(frame: CGRect.init(x: 0, y: 0, width: Const.WAITING_AREA_VIEW_WIDTH, height: Const.WAITING_AREA_VIEW_HEIGHT))
         self.wantsLayer = true
@@ -69,7 +68,7 @@ class WaitingAreaView: NSView {
         if GameManager.instance().deal() , let delegate = self.delegate {
             AudioPlayer.instance().play(type: .deal)
             delegate.didDeal()
-            self.waitingCards = GameManager.instance().waittingAreaCards
+            self.cards = GameManager.instance().waittingAreaCards
             reloadData()
         }
     }

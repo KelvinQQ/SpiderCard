@@ -112,11 +112,13 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         deskAreaView?.cards = GameManager.instance().deskAreaCards
         deskAreaView?.reloadData()
+        finishedAreaView?.cards = GameManager.instance().finishedAreaCards
+        finishedAreaView?.reloadData()
     }
     
     func didFinish() {
         
-        finishedAreaView?.finishedCards = GameManager.instance().finishedAreaCards
+        finishedAreaView?.cards = GameManager.instance().finishedAreaCards
         finishedAreaView?.reloadData()
         
         if GameManager.instance().isFinished() {

@@ -108,7 +108,6 @@ class DeskAreaView: NSView {
             super.mouseDown(with: event)
             return
         }
-        print("mouseDown \(location)")
         
         guard let tmp = indexBy(point: location) else {
             return
