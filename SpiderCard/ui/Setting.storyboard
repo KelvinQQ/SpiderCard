@@ -36,17 +36,17 @@
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="ZY0-80-0HK" customClass="SettingViewController" customModule="蜘蛛纸牌" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0Jc-yG-BxI">
-                        <rect key="frame" x="0.0" y="0.0" width="345" height="249"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="249"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box title="难易度设置" translatesAutoresizingMaskIntoConstraints="NO" id="CUY-hA-y69">
-                                <rect key="frame" x="27" y="65" width="291" height="154"/>
+                                <rect key="frame" x="27" y="65" width="156" height="154"/>
                                 <view key="contentView" id="dUO-7W-iCF">
-                                    <rect key="frame" x="3" y="3" width="285" height="133"/>
+                                    <rect key="frame" x="3" y="3" width="150" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-Yd-RE9">
-                                            <rect key="frame" x="20" y="23" width="215" height="88"/>
+                                            <rect key="frame" x="20" y="23" width="80" height="88"/>
                                             <subviews>
                                                 <button verticalHuggingPriority="750" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-2K-ltA">
                                                     <rect key="frame" x="-1" y="71" width="83" height="18"/>
@@ -103,13 +103,13 @@
                                 <font key="titleFont" metaFont="system" size="14"/>
                             </box>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="100" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-Z3-Mye">
-                                <rect key="frame" x="68" y="20" width="210" height="21"/>
+                                <rect key="frame" x="109" y="20" width="210" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQd-5P-RHS">
                                         <rect key="frame" x="-6" y="-7" width="67" height="32"/>
                                         <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QXr-ds-7p0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="cancelAction:" target="ZY0-80-0HK" id="CgS-sy-uJK"/>
@@ -135,10 +135,74 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <box title="提示音设置" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-U0-iV1">
+                                <rect key="frame" x="253" y="65" width="148" height="154"/>
+                                <view key="contentView" id="bOX-UL-ZZo">
+                                    <rect key="frame" x="3" y="3" width="141" height="134"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-dg-rHV">
+                                            <rect key="frame" x="20" y="24" width="72" height="82"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="LL7-oN-p9P">
+                                                    <rect key="frame" x="-2" y="66" width="76" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="游戏开始" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Yn7-YG-Q9U">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="soundAction:" target="ZY0-80-0HK" id="Rsm-5q-YfW"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-KL-AIH">
+                                                    <rect key="frame" x="-2" y="32" width="76" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="游戏过程" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="74H-yY-3qc">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="soundAction:" target="ZY0-80-0HK" id="kNE-2u-cmu"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="jdQ-eL-ihX">
+                                                    <rect key="frame" x="-2" y="-2" width="76" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="游戏胜利" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qi2-sy-tAd">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="soundAction:" target="ZY0-80-0HK" id="ubh-gB-31R"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pf5-dg-rHV" firstAttribute="leading" secondItem="bOX-UL-ZZo" secondAttribute="leading" constant="20" id="FbC-Qh-dsN"/>
+                                        <constraint firstAttribute="trailing" secondItem="pf5-dg-rHV" secondAttribute="trailing" constant="50" id="iM9-Ra-6L1"/>
+                                        <constraint firstItem="pf5-dg-rHV" firstAttribute="centerY" secondItem="bOX-UL-ZZo" secondAttribute="centerY" id="nh9-kE-ifL"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="cYa-Vr-Mjx"/>
+                                </constraints>
+                                <font key="titleFont" size="15" name=".PingFangSC-Regular"/>
+                            </box>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="VKm-U0-iV1" firstAttribute="top" secondItem="0Jc-yG-BxI" secondAttribute="top" constant="30" id="117-nf-kUd"/>
                             <constraint firstItem="cNt-Z3-Mye" firstAttribute="centerX" secondItem="0Jc-yG-BxI" secondAttribute="centerX" id="Gas-db-VpN"/>
-                            <constraint firstItem="CUY-hA-y69" firstAttribute="centerX" secondItem="0Jc-yG-BxI" secondAttribute="centerX" id="IJm-IT-9XV"/>
+                            <constraint firstAttribute="trailing" secondItem="VKm-U0-iV1" secondAttribute="trailing" constant="30" id="L3I-VG-d4e"/>
                             <constraint firstAttribute="bottom" secondItem="cNt-Z3-Mye" secondAttribute="bottom" constant="20" id="QMS-QZ-Kcr"/>
                             <constraint firstItem="CUY-hA-y69" firstAttribute="leading" secondItem="0Jc-yG-BxI" secondAttribute="leading" constant="30" id="RwL-Y7-r82"/>
                             <constraint firstItem="CUY-hA-y69" firstAttribute="top" secondItem="0Jc-yG-BxI" secondAttribute="top" constant="30" id="eqP-yi-FLw"/>
@@ -147,7 +211,7 @@
                 </viewController>
                 <customObject id="hPW-ts-hCr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261.5" y="460.5"/>
+            <point key="canvasLocation" x="-220" y="460.5"/>
         </scene>
     </scenes>
 </document>

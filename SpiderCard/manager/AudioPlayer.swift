@@ -38,6 +38,22 @@ class AudioPlayer {
     
     func play(type: AutioType) {
         
+        var canPlay = false
+        
+        switch type {
+        case .success:
+            canPlay = Preference.instance.soundTip.contains(.success)
+        case .launch:
+            canPlay = Preference.instance.soundTip.contains(.start)
+        case .pickup, .putdown, .deal:
+            canPlay = Preference.instance.soundTip.contains(.progress)
+        case .firework, .no_tip, .tip:
+            canPlay = false
+        }
+        
+        if !canPlay {
+            return
+        }
         guard let path = Bundle.main.path(forResource: type.rawValue, ofType: "wav") else {
             return
         }

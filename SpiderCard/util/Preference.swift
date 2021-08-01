@@ -25,9 +25,24 @@ enum Difficult: Int {
         }
     }
 }
+
+struct SoundTip: OptionSet {
+    var rawValue: UInt
+
+    static let start            = SoundTip(rawValue: 1 << 0)
+    static let progress         = SoundTip(rawValue: 1 << 1)
+    static let success          = SoundTip(rawValue: 1 << 2)
+    static let all: SoundTip    = [.start, .progress, .success]
+}
+
+
 struct Preference {
+    
+    var soundTip: SoundTip = SoundTip.init(rawValue: UInt(UserDefaults.standard.integer(forKey: "SOUND_TIP")))
     var difficult: Difficult = Difficult(rawValue: UserDefaults.standard.integer(forKey: "DIFFICULT")) 
+    
     func save() {
+        UserDefaults.standard.setValue(soundTip.rawValue, forKey: "SOUND_TIP")
         UserDefaults.standard.setValue(difficult.rawValue, forKey: "DIFFICULT")
         UserDefaults.standard.synchronize()
     }
