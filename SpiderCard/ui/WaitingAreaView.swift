@@ -12,9 +12,6 @@ protocol WaitingAreaViewDelegate: class {
 }
 
 class WaitingAreaView: NSView {
-
-    let kPadding: CGFloat = 10.0
-    let kInnerMargin: CGFloat = 20.0
     
     var waitingCards: Array<Array<Card>>?
     var selectedCard: CardView?
@@ -50,7 +47,7 @@ class WaitingAreaView: NSView {
             let imageView = CardView.init(card: column[0])
             imageView.setFrame(frame: frame)
             self.addSubview(imageView)
-            columnX += (kInnerMargin)
+            columnX += (Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL)
         }
     }
     
@@ -60,7 +57,7 @@ class WaitingAreaView: NSView {
         let columnWidth = Const.CARD_WIDTH
         let columnHeight = Const.CARD_HEIGHT
         
-        let width = columnWidth + CGFloat(cards.count - 1) * kInnerMargin
+        let width = columnWidth + CGFloat(cards.count - 1) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL
         let height = columnHeight
         
         super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))

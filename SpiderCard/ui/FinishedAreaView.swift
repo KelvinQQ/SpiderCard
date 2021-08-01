@@ -10,9 +10,6 @@ import Cocoa
 class FinishedAreaView: NSView {
     
     var finishedCards: Array<Array<Card>>?
-    
-    let kPadding: CGFloat = 10.0
-    let kInnerMargin: CGFloat = 20.0
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -43,7 +40,7 @@ class FinishedAreaView: NSView {
             let imageView = CardView.init(card: column[0])
             imageView.setFrame(frame: frame)
             self.addSubview(imageView)
-            columnX += (kInnerMargin)
+            columnX += (Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL)
         }
     }
     
@@ -53,7 +50,7 @@ class FinishedAreaView: NSView {
         let columnWidth = Const.CARD_WIDTH
         let columnHeight = Const.CARD_HEIGHT
         
-        let width = columnWidth + CGFloat(7) * kInnerMargin
+        let width = columnWidth + CGFloat(7) * Const.HORIZONTAL_CARD_INNER_MARGIN_SMALL
         let height = columnHeight
         
         super.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height))

@@ -13,8 +13,6 @@ protocol DeskAreaViewDelegate: class {
 
 class DeskAreaView: NSView {
     
-    let kInnerMargin: CGFloat = 20.0
-    
     var cards: Array<Array<Card>>?
     
     weak var delegate: DeskAreaViewDelegate?
@@ -64,7 +62,7 @@ class DeskAreaView: NSView {
         for column in cards {
             let frame = CGRect.init(x: columnX, y: columnY, width: Const.CARD_WIDTH, height: columnHeight)
             let emptyImageView = NSImageView.init()
-            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_HEIGHT,
+            emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_HEIGHT - Const.TOP_MARGIN,
                                                width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
             emptyImageView.wantsLayer = true
             emptyImageView.layer?.borderColor = NSColor.white.cgColor
@@ -80,24 +78,23 @@ class DeskAreaView: NSView {
     
     func setupColumnCard(frame: NSRect, cards: Array<Card>) {
         let x: CGFloat = frame.origin.x
-        var y: CGFloat = frame.height - Const.CARD_HEIGHT
+        var y: CGFloat = frame.height - Const.CARD_HEIGHT - Const.TOP_MARGIN
         var frames: Array<NSRect> = []
         var views: Array<CardView> = []
         for (index, card) in cards.enumerated() {
             let imageView = CardView.init(card: card)
             imageView.layer?.zPosition = CGFloat(index)
-            var margin: CGFloat = 15.0
             let frame = CGRect.init(x: x, y: y, width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
             frames.append(frame)
             views.append(imageView)
             imageView.setFrame(frame: frame)
             self.addSubview(imageView)
             if card.mode {
-                margin = 25.0
+                y -= Const.VERTICAL_CARD_INNER_MARGIN_BIG
             } else {
-                margin = 15.0
+                y -= Const.VERTICAL_CARD_INNER_MARGIN_SMALL
             }
-            y -= margin
+            
         }
         deskCardViews.append(views)
     }
@@ -159,14 +156,14 @@ class DeskAreaView: NSView {
         let lastFrame = lastCard?.frame
         var origin = CGPoint.init(x: columnFrames[columnIndex].origin.x, y: columnFrames[columnIndex].height - Const.CARD_HEIGHT)
         if lastFrame != nil {
-            origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - 20)
+            origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - Const.VERTICAL_CARD_INNER_MARGIN_BIG)
         }
         
         let cards = selectedCardViews(selectedIndex: selected)
         for (index, item) in cards.enumerated() {
             let zPosition = lastCard?.layer?.zPosition ?? 0
             item.layer?.zPosition = zPosition + CGFloat(index + 1)
-            item.setFrameOrigin(NSPoint.init(x: origin.x, y: origin.y - CGFloat(index) * kInnerMargin))
+            item.setFrameOrigin(NSPoint.init(x: origin.x, y: origin.y - CGFloat(index) * Const.VERTICAL_CARD_INNER_MARGIN_BIG))
         }
         selectedInfo = nil
         deskCardViews[columnIndex].append(contentsOf: cards)
@@ -227,16 +224,17 @@ class DeskAreaView: NSView {
         }
         var origin = CGPoint.init(x: 0, y: 0)
         let lastCard = cardViewOf(columnIndex: selected.columnIndex, cardIndex: max(selected.cardIndex - 1, 0))
+        let lastMode = lastCard?.card?.mode ?? false
         let lastFrame = lastCard?.frame
         if lastFrame != nil {
-            origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - 20)
+            origin =  CGPoint.init(x: lastFrame!.origin.x, y: lastFrame!.origin.y - (lastMode ? Const.VERTICAL_CARD_INNER_MARGIN_BIG : Const.VERTICAL_CARD_INNER_MARGIN_SMALL))
         }
         
         let cards = selectedCardViews(selectedIndex: selected)
         for (index, item) in cards.enumerated() {
             let zPosition = lastCard?.layer?.zPosition ?? 0
             item.layer?.zPosition = zPosition + CGFloat(index + 1)
-            item.setFrameOrigin(NSPoint.init(x: origin.x, y: origin.y - CGFloat(index) * kInnerMargin))
+            item.setFrameOrigin(NSPoint.init(x: origin.x, y: origin.y - CGFloat(index) * Const.VERTICAL_CARD_INNER_MARGIN_BIG))
         }
         selectedInfo = nil
     }

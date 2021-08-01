@@ -81,27 +81,24 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         GameManager.instance().start()
         
-        var frame = self.view.bounds
-        frame.size.height = frame.height * 0.7
-        frame.origin.y = frame.origin.y + self.view.bounds.height - frame.height - Const.TOP_MARGIN
-        deskAreaView = DeskAreaView.init(frame: frame,
+        deskAreaView = DeskAreaView.init(frame: self.view.bounds,
                                          cards: GameManager.instance().deskAreaCards)
         deskAreaView?.delegate = self
         
         waitingAreaView = WaitingAreaView.init(cards: GameManager.instance().waittingAreaCards)
-        waitingAreaView?.setFrameOrigin(CGPoint.init(x: self.view.bounds.width - waitingAreaView!.bounds.width - 20,
+        waitingAreaView?.setFrameOrigin(CGPoint.init(x: self.view.bounds.width - waitingAreaView!.bounds.width - Const.RIGHT_MARGIN,
                                                      y: waitingAreaView!.bounds.origin.y + Const.BOTTOM_MARGIN))
         waitingAreaView?.delegate = self
         
-        scoreAreaView = ScoreAreaView.init(frame: CGRect.init(x: self.view.bounds.midX - 100, y: Const.BOTTOM_MARGIN, width: 200, height: 100))
+        scoreAreaView = ScoreAreaView.init(frame: CGRect.init(x: self.view.bounds.midX - Const.SCORE_AREA_VIEW_WIDTH / 2.0, y: Const.BOTTOM_MARGIN, width: Const.SCORE_AREA_VIEW_WIDTH, height: Const.SCORE_AREA_VIEW_HEIGHT))
         
         finishedAreaView = FinishedAreaView.init(cards: GameManager.instance().finishedAreaCards)
-        finishedAreaView?.setFrameOrigin(CGPoint.init(x: 20, y: Const.BOTTOM_MARGIN))
+        finishedAreaView?.setFrameOrigin(CGPoint.init(x: Const.LEFT_MARGIN, y: Const.BOTTOM_MARGIN))
         
-        self.view.addSubview(deskAreaView!)
         self.view.addSubview(waitingAreaView!)
         self.view.addSubview(scoreAreaView!)
         self.view.addSubview(finishedAreaView!)
+        self.view.addSubview(deskAreaView!)
     }
     
     func didDeal() {
@@ -113,9 +110,6 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         deskAreaView?.cards = GameManager.instance().deskAreaCards
         deskAreaView?.reloadData()
-        
-//        print(GameManager.instance().deskAreaCards)
-//        print(GameManager.instance().waittingAreaCards)
     }
     
     func didFinish() {

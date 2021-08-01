@@ -9,7 +9,7 @@
         <!--Window Controller-->
         <scene sceneID="lgP-bb-i1W">
             <objects>
-                <windowController id="8K8-Or-cTH" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="SettingWindowController" id="8K8-Or-cTH" sceneMemberID="viewController">
                     <window key="window" title="设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ypa-DW-91t">
                         <windowStyleMask key="styleMask" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

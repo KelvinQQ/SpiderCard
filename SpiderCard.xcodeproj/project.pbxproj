@@ -144,7 +144,7 @@
 				843A33FB26A1C0FF00782247 /* Sources */,
 				843A33FC26A1C0FF00782247 /* Frameworks */,
 				843A33FD26A1C0FF00782247 /* Resources */,
-				84ADFB4126B6390A000A93E5 /* ShellScript */,
+				84ADFB4126B6390A000A93E5 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -203,7 +203,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84ADFB4126B6390A000A93E5 /* ShellScript */ = {
+		84ADFB4126B6390A000A93E5 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,13 +212,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=`date +\"%Y%m%d%H%M\"`\necho ${buildNumber}\n/usr/libexec/PlistBuddy -c \"Set CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\n";
+			shellScript = "if [ $CONFIGURATION == Release ]; then\n    buildNumber=`date +\"%Y%m%d%H%M\"`\n    /usr/libexec/PlistBuddy -c \"Set CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
