@@ -153,7 +153,7 @@ class DeskAreaView: NSView {
         
         AudioPlayer.instance().play(type: .putdown)
         
-        guard let columnIndex = columnOfPoint(point: location) else {
+        guard let columnIndex = calculateMoveToIndex() else {
             resetPosition()
             return
         }
@@ -286,5 +286,30 @@ class DeskAreaView: NSView {
     
     func setWaitingAreaRect(rect: CGRect) {
         waitingAreaRect = rect
+    }
+    
+    func calculateMoveToIndex() -> Int? {
+        let cards = selectedCardViews(selectedIndex: self.selectedInfo!)
+        guard let card = cards.first else {
+            return nil
+        }
+        let start = card.frame.origin
+        let end = CGPoint.init(x: start.x + card.frame.width, y: start.y)
+        
+        var index: Int? = nil
+        var width:CGFloat = 0
+        for (i, item) in columnFrames.enumerated() {
+            if item.contains(start) {
+                width = item.maxX - start.x
+                index = i
+            }
+            if item.contains(end) && end.x - item.minX > width {
+                index = i
+            }
+            if let tmp = index, i > tmp + 2 {
+                break
+            }
+        }
+        return index
     }
 }
