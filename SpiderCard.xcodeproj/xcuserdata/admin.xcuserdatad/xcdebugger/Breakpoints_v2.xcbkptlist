@@ -142,8 +142,8 @@
             filePath = "SpiderCard/ui/DeskAreaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "mouseUp(with:)"
             landmarkType = "7">
          </BreakpointContent>

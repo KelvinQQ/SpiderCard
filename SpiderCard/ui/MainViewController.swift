@@ -9,6 +9,7 @@ import Cocoa
 
 class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaViewDelegate {
     
+    @IBOutlet weak var backgroundImageView: NSImageView!
     var deskAreaView: DeskAreaView?
     var waitingAreaView: WaitingAreaView?
     var scoreAreaView: ScoreAreaView?

@@ -22,7 +22,7 @@ class ScoreAreaView: NSView {
         label?.isBordered = false
         label?.backgroundColor = NSColor.clear
         label?.stringValue = text
-        label?.textColor = NSColor.black
+        label?.textColor = NSColor.white.withAlphaComponent(0.8)
         label?.isEditable = false
         label?.font = NSFont.systemFont(ofSize: 15)
     }
@@ -30,6 +30,9 @@ class ScoreAreaView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         self.wantsLayer = true
+        self.layer?.backgroundColor = NSColor.init(red: 15.0/255.0, green: 126.0/255.0, blue: 18.0/255.0, alpha: 1.0).cgColor
+        self.layer?.borderColor = NSColor.black.cgColor
+        self.layer?.borderWidth = 1.0
         
         let scoreTipLabel = NSTextField.init()
         setupLabel(label: scoreTipLabel, text:"分数: ")

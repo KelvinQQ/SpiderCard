@@ -102,11 +102,29 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5s-5a-nRY">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="700"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="background" id="NdY-UE-ZO2"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="q5s-5a-nRY" secondAttribute="bottom" id="87C-Mt-51U"/>
+                            <constraint firstAttribute="trailing" secondItem="q5s-5a-nRY" secondAttribute="trailing" id="Cu8-1C-DFW"/>
+                            <constraint firstItem="q5s-5a-nRY" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="T93-q0-DYo"/>
+                            <constraint firstItem="q5s-5a-nRY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="gUA-4L-4ce"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="q5s-5a-nRY" id="6bT-ke-c58"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="43" height="41"/>
+    </resources>
 </document>

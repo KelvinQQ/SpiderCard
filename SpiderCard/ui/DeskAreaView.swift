@@ -63,9 +63,13 @@ class DeskAreaView: NSView {
         
         for column in cards {
             let frame = CGRect.init(x: columnX, y: columnY, width: Const.CARD_WIDTH, height: columnHeight)
-            let emptyImageView = NSImageView.init(image: NSImage.init(named: "empty")!)
+            let emptyImageView = NSImageView.init()
             emptyImageView.frame = CGRect.init(x: columnX, y: columnHeight - Const.CARD_HEIGHT,
                                                width: Const.CARD_WIDTH, height: Const.CARD_HEIGHT)
+            emptyImageView.wantsLayer = true
+            emptyImageView.layer?.borderColor = NSColor.white.cgColor
+            emptyImageView.layer?.borderWidth = 1.0
+            emptyImageView.layer?.cornerRadius = 5.0
             self.addSubview(emptyImageView)
             
             setupColumnCard(frame: frame, cards: column)
