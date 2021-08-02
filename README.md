@@ -35,12 +35,6 @@
 * `clone` 源码后自行编译运行
 * `release` 中下载 `dmg` 文件
 
-## 开源不易，理性打赏
-
-支付宝 | 微信
----|---
-![image](./images/zhifubao.jpg) | ![image](./images/weixin.jpg)
-
 
 
 
