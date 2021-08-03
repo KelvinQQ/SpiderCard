@@ -11,6 +11,11 @@ class ScoreAreaView: NSView {
     
     var scoreLabel: NSTextField?
     var actionsLabel: NSTextField?
+    var timeLabel: NSTextField?
+    
+    var secondCount = 0
+    
+    var timer: Timer?
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -60,11 +65,25 @@ class ScoreAreaView: NSView {
         secondStackView.addArrangedSubview(stepTipLabel)
         secondStackView.addArrangedSubview(actionsLabel!)
         
+        let timeTipLabel = NSTextField.init()
+        setupLabel(label: timeTipLabel, text:"耗时: ")
+        self.addSubview(timeTipLabel)
+        timeLabel = NSTextField.init()
+        setupLabel(label: timeLabel, text:"00:00")
+        self.addSubview(timeLabel!)
+        
+        let thirdStackView = NSStackView.init()
+        thirdStackView.orientation = .horizontal
+        thirdStackView.distribution = .fillEqually
+        thirdStackView.addArrangedSubview(timeTipLabel)
+        thirdStackView.addArrangedSubview(timeLabel!)
+        
         let stackView = NSStackView.init(frame: self.bounds)
         stackView.orientation = .vertical
         stackView.distribution = .gravityAreas
         stackView.addArrangedSubview(firstStackView)
         stackView.addArrangedSubview(secondStackView)
+        stackView.addArrangedSubview(thirdStackView)
         self.addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,8 +97,48 @@ class ScoreAreaView: NSView {
     func upate(actions: Int) {
         actionsLabel?.stringValue = "\(actions)"
     }
+    func startTimer() {
+        if timer != nil {
+            timer?.invalidate()
+        }
+        secondCount = 0
+        timer = Timer.init(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+    }
+    
+    func stopTimer() {
+        if let tmp = timer {
+            tmp.invalidate()
+            timer = nil
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func timerAction() {
+        secondCount += 1
+        let hour = secondCount / 3600
+        let minute = secondCount % 3600 / 60
+        let second = secondCount % 3600 % 60
+        var formatText = ""
+        if hour > 10 {
+            formatText += "\(hour):"
+        } else if hour > 0 {
+            formatText += "0\(hour):"
+        }
+        
+        if minute < 10 {
+            formatText += "0\(minute):"
+        } else {
+            formatText += "\(minute):"
+        }
+        if second < 10 {
+            formatText += "0\(second)"
+        } else {
+            formatText += "\(second)"
+        }
+        timeLabel?.stringValue = formatText
     }
 }

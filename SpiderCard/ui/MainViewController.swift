@@ -95,7 +95,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         finishedAreaView = FinishedAreaView.init(cards: GameManager.instance().finishedAreaCards)
         finishedAreaView?.setFrameOrigin(CGPoint.init(x: Const.LEFT_MARGIN, y: Const.BOTTOM_MARGIN))
-        
+        scoreAreaView?.startTimer()
         self.view.addSubview(waitingAreaView!)
         self.view.addSubview(scoreAreaView!)
         self.view.addSubview(finishedAreaView!)
@@ -123,6 +123,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         
         if GameManager.instance().isFinished() {
             AudioPlayer.instance().play(type: .success)
+            scoreAreaView?.stopTimer()
             let alert = NSAlert.init()
             alert.alertStyle = .warning
             alert.addButton(withTitle: "确定")
