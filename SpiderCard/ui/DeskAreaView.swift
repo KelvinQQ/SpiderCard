@@ -113,7 +113,7 @@ class DeskAreaView: NSView {
             return
         }
         
-        if !GameManager.instance().canPicker(from: tmp.columnIndex, index: tmp.cardIndex) {
+        if !GameManager.instance.canPicker(from: tmp.columnIndex, index: tmp.cardIndex) {
             return
         }
         
@@ -163,7 +163,7 @@ class DeskAreaView: NSView {
             return
         }
         
-        if !GameManager.instance().move(from: selected.columnIndex, to: columnIndex, index: selected.cardIndex) {
+        if !GameManager.instance.move(from: selected.columnIndex, to: columnIndex, index: selected.cardIndex) {
             resetPosition()
             return
         }
@@ -185,17 +185,17 @@ class DeskAreaView: NSView {
         deskCardViews[columnIndex].append(contentsOf: cards)
         deskCardViews[selected.columnIndex].removeSubrange(selected.cardIndex...)
         
-        if GameManager.instance().transform(column: selected.columnIndex) {
+        if GameManager.instance.transform(column: selected.columnIndex) {
             deskCardViews[selected.columnIndex].last!.transform()
         }
         
-        if GameManager.instance().finish(column: columnIndex) {
+        if GameManager.instance.finish(column: columnIndex) {
             // 收牌
-            self.cards = GameManager.instance().deskAreaCards
+            self.cards = GameManager.instance.deskAreaCards
             reloadData()
             delegate?.didFinish()
             
-            if GameManager.instance().transform(column: columnIndex) {
+            if GameManager.instance.transform(column: columnIndex) {
                 deskCardViews[columnIndex].last!.transform()
             }
         }
@@ -238,8 +238,8 @@ class DeskAreaView: NSView {
         guard let selected = self.selectedInfo else {
             return
         }
-        var origin = CGPoint.init(x: 0, y: 0)
-        let lastCard = cardViewOf(columnIndex: selected.columnIndex, cardIndex: max(selected.cardIndex - 1, 0))
+        var origin = CGPoint.init(x: columnFrames[selected.columnIndex].origin.x, y: columnFrames[selected.columnIndex].maxY - Const.CARD_HEIGHT - Const.TOP_MARGIN)
+        let lastCard = cardViewOf(columnIndex: selected.columnIndex, cardIndex: selected.cardIndex - 1)
         let lastMode = lastCard?.card?.mode ?? false
         let lastFrame = lastCard?.frame
         if lastFrame != nil {
@@ -272,6 +272,9 @@ class DeskAreaView: NSView {
         return Array.init(deskCardViews[selectedIndex.columnIndex][selectedIndex.cardIndex...])
     }
     func cardViewOf(columnIndex: Int, cardIndex: Int) -> CardView? {
+        if cardIndex < 0 {
+            return nil
+        }
         if columnIndex > deskCardViews.count {
             return nil
         }

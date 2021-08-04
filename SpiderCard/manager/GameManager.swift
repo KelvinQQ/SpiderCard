@@ -11,7 +11,7 @@ class GameManager: NSObject {
     var actions: Array<Action> = []
     @objc dynamic var poker: Poker = Poker()
     
-    private static var singleton: GameManager?
+    static let instance: GameManager = GameManager()
     
     var deskAreaCards: Array<Array<Card>> {
         return poker.deskArea
@@ -25,13 +25,6 @@ class GameManager: NSObject {
         return poker.finishedArea
     }
     
-    static func instance() -> GameManager {
-        if singleton == nil {
-            singleton = GameManager()
-        }
-        return singleton!
-    }
-    
     private override init() {
         
     }
@@ -40,11 +33,11 @@ class GameManager: NSObject {
     func start() {
         let reset = Reset()
         if reset.do(poker: poker) {
-            actions.append(reset)
+//            actions.append(reset)
         }
         let wash = Wash.init(difficult: Preference.instance.difficult)
         if wash.do(poker: poker) {
-            actions.append(wash)
+//            actions.append(wash)
         }
     }
     
@@ -58,7 +51,8 @@ class GameManager: NSObject {
     }
     
     func move(from: Int, to: Int, index: Int) -> Bool {
-        let move = Move(from: from, to: to, index: index)
+        let count = poker.deskArea[from].count - index
+        let move = Move(from: from, to: to, count: count)
         if move.do(poker: poker) {
             actions.append(move)
             poker.score -= 1
@@ -110,5 +104,39 @@ class GameManager: NSObject {
     
     func isFinished() -> Bool {
         return poker.finishedArea.count == 8
+    }
+    
+    func canUndo() -> Bool {
+        return !actions.isEmpty
+    }
+    
+    func undo() -> Bool {
+        if !canUndo() {
+            return false
+        }
+        
+        var shouldBreak = false
+        
+        while actions.count > 0 && !shouldBreak {
+            let action = actions.last!
+            shouldBreak = action is Move || action is Deal
+            if action.undo(poker: poker) {
+                switch action {
+                case is Finish:
+                    poker.score -= 100
+                case is Move:
+                    poker.score -= 1
+                    poker.actions += 1
+                default:
+                    break
+                }
+                actions.removeLast()
+            } else {
+                return false
+            }
+        }
+        
+        return true
+        
     }
 }

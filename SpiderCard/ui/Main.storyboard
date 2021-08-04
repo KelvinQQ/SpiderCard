@@ -47,7 +47,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
-                                        <menuItem title="撤销" keyEquivalent="z" id="g5s-bu-owi"/>
+                                        <menuItem title="撤销" tag="100" keyEquivalent="z" id="g5s-bu-owi">
+                                            <connections>
+                                                <action selector="undoActionWithSender:" target="Ady-hI-5gd" id="VeJ-5C-zGA"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

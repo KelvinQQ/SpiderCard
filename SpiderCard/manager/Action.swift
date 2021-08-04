@@ -91,12 +91,21 @@ class Finish: Action {
         return true
     }
     
+    func undo(poker: Poker) -> Bool {
+        guard let cards = poker.finishedArea.last else {
+            return false
+        }
+        poker.deskArea[column].append(contentsOf: cards)
+        poker.finishedArea.removeLast()
+        return true
+    }
+    
 }
 
 /// 翻拍
 class Transform: Action {
     func `do`(poker: Poker) -> Bool {
-        if let last = poker.deskArea[column].last {
+        if let last = poker.deskArea[column].last, last.mode == false {
             last.mode = true
             return true
         }
@@ -108,6 +117,13 @@ class Transform: Action {
         self.column = column
     }
     
+    func undo(poker: Poker) -> Bool {
+        if let last = poker.deskArea[column].last {
+            last.mode = false
+            return true
+        }
+        return false
+    }
 }
 
 
@@ -123,6 +139,21 @@ class Deal: Action {
             poker.deskArea[i].append(card)
         }
         poker.waitingArea.removeLast()
+        return true
+    }
+    
+    func undo(poker: Poker) -> Bool {
+        var cards: Array<Card> = []
+        for i in 0..<Const.DESK_COLUMN_COUNT {
+            let card = poker.deskArea[i].last!
+            card.mode = false
+            cards.append(card)
+            poker.deskArea[i].removeLast()
+        }
+//        if cards.count != Const.DESK_COLUMN_COUNT {
+//            return false
+//        }
+        poker.waitingArea.append(cards)
         return true
     }
     
@@ -153,7 +184,7 @@ class Deal: Action {
 class Move: Action {
     var from = -1
     var to = -1
-    var index = -1
+    var count = -1
     
     func `do`(poker: Poker) -> Bool {
 
@@ -164,15 +195,23 @@ class Move: Action {
         return true
     }
     
+    func undo(poker: Poker) -> Bool {
+        let size = poker.deskArea[to].count - count
+        poker.deskArea[from].append(contentsOf: poker.deskArea[to][size...])
+        poker.deskArea[to].removeSubrange(size...)
+        return true
+    }
+    
     func move(poker: Poker) {
-        poker.deskArea[to].append(contentsOf: poker.deskArea[from][index...])
-        poker.deskArea[from].removeSubrange(index...)
+        let size = poker.deskArea[from].count - count
+        poker.deskArea[to].append(contentsOf: poker.deskArea[from][size...])
+        poker.deskArea[from].removeSubrange(size...)
     }
     
     func canMove(poker: Poker) -> Bool {
         let cards = poker.deskArea[from]
         var last = cards[0]
-        for i in index..<cards.count {
+        for i in (poker.deskArea[from].count - count)..<cards.count {
             if cards[i].suit != last.suit {
                 return false
             }
@@ -188,16 +227,16 @@ class Move: Action {
         if poker.deskArea[to].isEmpty {
             return true
         }
-        if poker.deskArea[to].last!.point != poker.deskArea[from][index].point + 1 {
+        if poker.deskArea[to].last!.point != poker.deskArea[from][poker.deskArea[from].count - count].point + 1 {
             return false
         }
         return true
     }
     
-    init(from: Int, to: Int, index: Int) {
+    init(from: Int, to: Int, count: Int) {
         self.from = from
         self.to = to
-        self.index = index
+        self.count = count
     }
 }
 

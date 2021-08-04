@@ -65,10 +65,10 @@ class WaitingAreaView: NSView {
     }
     
     override func mouseUp(with event: NSEvent) {
-        if GameManager.instance().deal() , let delegate = self.delegate {
+        if GameManager.instance.deal() , let delegate = self.delegate {
             AudioPlayer.instance().play(type: .deal)
             delegate.didDeal()
-            self.cards = GameManager.instance().waittingAreaCards
+            self.cards = GameManager.instance.waittingAreaCards
             reloadData()
         }
     }
