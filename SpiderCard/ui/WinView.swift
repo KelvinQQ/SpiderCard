@@ -46,7 +46,7 @@ class WinView: NSView {
         
         let rocket = CAEmitterCell.init()
         
-        rocket.birthRate        = 1
+        rocket.birthRate        = 3
         rocket.lifetime         = 1.02
         rocket.emissionLongitude = CGFloat(Double.pi * 1)
         rocket.velocity         = 400
