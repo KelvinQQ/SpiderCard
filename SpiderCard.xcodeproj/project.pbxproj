@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840D37E326BD5E9500A8FFD3 /* TipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D37E226BD5E9500A8FFD3 /* TipInfo.swift */; };
 		84ADFB5F26B65E10000A93E5 /* putdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5726B65E10000A93E5 /* putdown.wav */; };
 		84ADFB6026B65E10000A93E5 /* deal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5826B65E10000A93E5 /* deal.wav */; };
 		84ADFB6126B65E10000A93E5 /* no_tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5926B65E10000A93E5 /* no_tip.wav */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840D37E226BD5E9500A8FFD3 /* TipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInfo.swift; sourceTree = "<group>"; };
 		843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "蜘蛛纸牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ADFB5726B65E10000A93E5 /* putdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = putdown.wav; sourceTree = "<group>"; };
 		84ADFB5826B65E10000A93E5 /* deal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = deal.wav; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				84E4974626B5617F0023AB1B /* GameManager.swift */,
 				84E4974726B5617F0023AB1B /* Action.swift */,
 				84ADFB6826B65E25000A93E5 /* AudioPlayer.swift */,
+				840D37E226BD5E9500A8FFD3 /* TipInfo.swift */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				84E4976326B5617F0023AB1B /* ScoreAreaView.swift in Sources */,
 				84E4976026B5617F0023AB1B /* WaitingAreaView.swift in Sources */,
 				84E4976E26B561800023AB1B /* AppDelegate.swift in Sources */,
+				840D37E326BD5E9500A8FFD3 /* TipInfo.swift in Sources */,
 				84E4976526B561800023AB1B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,15 @@ import Cocoa
 class AboutViewController: NSViewController {
 
     @IBOutlet weak var versionLabel: NSTextField!
+
+    @IBAction func starAction(_ sender: NSButton) {
+        NSWorkspace.shared.open(URL.init(string: "https://github.com/HistoryZhang/SpiderCard")!)
+    }
     
     @IBAction func dismissAction(_ sender: NSButton) {
         self.dismiss(self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

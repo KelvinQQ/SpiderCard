@@ -52,6 +52,11 @@
                                                 <action selector="undoActionWithSender:" target="Ady-hI-5gd" id="VeJ-5C-zGA"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="提示" tag="100" keyEquivalent="t" id="BqV-im-gqE">
+                                            <connections>
+                                                <action selector="tipActionWithSender:" target="Ady-hI-5gd" id="4cG-P1-wQu"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

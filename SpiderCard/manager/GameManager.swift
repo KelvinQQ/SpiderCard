@@ -8,6 +8,8 @@
 import Cocoa
 
 class GameManager: NSObject {
+    var searchIndex: TipInfo = .invalidTip()
+    
     var actions: Array<Action> = []
     @objc dynamic var poker: Poker = Poker()
     
@@ -138,5 +140,30 @@ class GameManager: NSObject {
         
         return true
         
+    }
+    
+    func nextTip() -> TipInfo? {
+//        if searchIndex.isInvaild() {
+//            searchIndex = TipInfo.init(from: 0, to: 1, count: poker.deskArea[0].count - 1)
+//        }
+//        for index in (0...searchIndex.count).reversed() {
+//            let count = poker.deskArea[searchIndex.column].count - index
+//            for column in 0..<poker.deskArea.count {
+//                if column == searchIndex.column {
+//                    continue
+//                }
+//                let tip = Tip.init(from: searchIndex.column, to: column, count: count)
+//                if tip.do(poker: poker) {
+//                    searchIndex.index = index
+//                    return TipInfo.init(from: searchIndex.column, to: column, count: count)
+//                }
+//            }
+//            searchIndex = SearchTipIndex.init(column: searchIndex.column + 1, index: poker.deskArea[searchIndex.column].count - 1)
+//            if searchIndex.column >= Const.DESK_COLUMN_COUNT {
+//                searchIndex = .invaildIndex()
+//                return nil
+//            }
+//        }
+        return nil
     }
 }

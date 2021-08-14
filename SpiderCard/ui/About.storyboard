@@ -35,43 +35,66 @@
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" id="lkO-xW-B8l" customClass="AboutViewController" customModule="蜘蛛纸牌" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Duw-Rr-EnD">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="199"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="192"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V3q-SU-f6F">
-                                <rect key="frame" x="134" y="13" width="67" height="32"/>
-                                <buttonCell key="cell" type="push" title="很赞" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JDm-SV-Vds">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="dismissAction:" target="lkO-xW-B8l" id="pki-nD-cSs"/>
-                                </connections>
-                            </button>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-Te-uD3">
-                                <rect key="frame" x="128" y="100" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Lft-pd-Gqf"/>
-                                    <constraint firstAttribute="width" constant="80" id="oXG-Yr-cyF"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="spider_256" id="N7p-KC-GB6"/>
-                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-i6-6XX">
-                                <rect key="frame" x="147" y="66" width="41" height="16"/>
+                                <rect key="frame" x="147" y="56" width="41" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="V1.0.0" id="L4E-vD-g6K">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="80" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-aV-TPK">
+                                <rect key="frame" x="59" y="20" width="218" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V3q-SU-f6F">
+                                        <rect key="frame" x="-6" y="-7" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="喜    欢" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JDm-SV-Vds">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="starAction:" target="lkO-xW-B8l" id="fv3-lv-sNC"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jUW-Fc-KBh">
+                                        <rect key="frame" x="143" y="-7" width="81" height="32"/>
+                                        <buttonCell key="cell" type="push" title="关    闭" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gji-Fy-t4e">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dismissAction:" target="lkO-xW-B8l" id="mKD-mp-f04"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-Te-uD3">
+                                <rect key="frame" x="128" y="92" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Lft-pd-Gqf"/>
+                                    <constraint firstAttribute="width" constant="80" id="oXG-Yr-cyF"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="spider_256" id="N7p-KC-GB6"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Mhc-i6-6XX" firstAttribute="centerX" secondItem="Duw-Rr-EnD" secondAttribute="centerX" id="AXm-Kf-Mu0"/>
+                            <constraint firstAttribute="bottom" secondItem="Vju-aV-TPK" secondAttribute="bottom" constant="20" id="HfM-Ya-u1l"/>
                             <constraint firstItem="xzm-Te-uD3" firstAttribute="centerX" secondItem="Duw-Rr-EnD" secondAttribute="centerX" id="L5v-jH-zqH"/>
-                            <constraint firstItem="xzm-Te-uD3" firstAttribute="centerY" secondItem="Duw-Rr-EnD" secondAttribute="centerY" constant="-40" id="YiQ-7X-kVo"/>
-                            <constraint firstItem="V3q-SU-f6F" firstAttribute="centerX" secondItem="Duw-Rr-EnD" secondAttribute="centerX" id="m5P-SJ-3MN"/>
-                            <constraint firstAttribute="bottom" secondItem="V3q-SU-f6F" secondAttribute="bottom" constant="20" id="qGu-if-h6Q"/>
-                            <constraint firstItem="V3q-SU-f6F" firstAttribute="top" secondItem="Mhc-i6-6XX" secondAttribute="bottom" constant="25" id="ux3-je-xwS"/>
+                            <constraint firstItem="xzm-Te-uD3" firstAttribute="top" secondItem="Duw-Rr-EnD" secondAttribute="top" constant="20" id="YAH-LI-c51"/>
+                            <constraint firstItem="Mhc-i6-6XX" firstAttribute="top" secondItem="xzm-Te-uD3" secondAttribute="bottom" constant="20" id="anW-od-kyN"/>
+                            <constraint firstItem="Vju-aV-TPK" firstAttribute="centerX" secondItem="Duw-Rr-EnD" secondAttribute="centerX" id="irO-B9-3Jl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -80,7 +103,7 @@
                 </viewController>
                 <customObject id="44k-5c-wz1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375.5" y="55.5"/>
+            <point key="canvasLocation" x="375.5" y="52"/>
         </scene>
     </scenes>
     <resources>

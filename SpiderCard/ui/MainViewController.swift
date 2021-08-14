@@ -51,6 +51,12 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         }
     }
     
+    @IBAction func tipAction(sender: NSMenuItem) {
+//        if let tip = GameManager.instance.nextTip() {
+//            print("\(tip)")
+//        }
+    }
+    
     @IBAction func aboutAction(sender: NSMenuItem) {
         let aboutVc = NSStoryboard.init(name: "About", bundle: nil).instantiateController(withIdentifier: "AboutViewController") as! AboutViewController
         self.presentAsSheet(aboutVc)
@@ -78,7 +84,6 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
                 self.scoreAreaView?.upate(score: score)
             }
         })
-        
     }
     
     deinit {
@@ -91,6 +96,7 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     }
     
     func newGame() {
+        winView?.stopAnimation()
         deskAreaView?.removeFromSuperview()
         waitingAreaView?.removeFromSuperview()
         scoreAreaView?.removeFromSuperview()
@@ -152,16 +158,23 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         if GameManager.instance.isFinished() {
             AudioPlayer.instance().play(type: .success)
             scoreAreaView?.stopTimer()
-            let alert = NSAlert.init()
-            alert.alertStyle = .warning
-            alert.addButton(withTitle: "确定")
-            alert.messageText = "恭喜"
-            alert.informativeText = "你赢了!!!再来一局!!"
-            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
-                if returnCode == .alertFirstButtonReturn {
-                    self.newGame()
-                }
-            }
+//            let alert = NSAlert.init()
+//            alert.alertStyle = .warning
+//            alert.addButton(withTitle: "确定")
+//            alert.messageText = "恭喜"
+//            alert.informativeText = "你赢了!!!再来一局!!"
+//            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
+//                if returnCode == .alertFirstButtonReturn {
+//                    self.newGame()
+//                    winView?.stopAnimation()
+//                }
+//            }
+            winView = WinView.init(frame: CGRect.init(x: 0,
+                                                      y: Const.FINISHED_AREA_VIEW_HEIGHT + Const.BOTTOM_MARGIN,
+                                                      width: self.view.bounds.width,
+                                                      height: self.view.bounds.height - Const.FINISHED_AREA_VIEW_HEIGHT - Const.BOTTOM_MARGIN))
+            self.view.addSubview(winView!)
+            winView!.startAnimation()
         }
     }
 }

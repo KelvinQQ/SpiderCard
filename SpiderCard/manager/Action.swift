@@ -208,21 +208,6 @@ class Move: Action {
         poker.deskArea[from].removeSubrange(size...)
     }
     
-    func canMove(poker: Poker) -> Bool {
-        let cards = poker.deskArea[from]
-        var last = cards[0]
-        for i in (poker.deskArea[from].count - count)..<cards.count {
-            if cards[i].suit != last.suit {
-                return false
-            }
-            if cards[i].point - last.point != 1 {
-                return false
-            }
-            last = cards[i]
-        }
-        return true
-    }
-    
     func canMoveTo(poker: Poker) -> Bool {
         if poker.deskArea[to].isEmpty {
             return true
@@ -316,6 +301,54 @@ class Reset: Action {
                           [],[],[],[],[],]
         poker.score = 500
         poker.actions = 0
+        return true
+    }
+}
+
+class Tip: Action {
+    var from = -1
+    var to = -1
+    var count = -1
+    
+    init(from: Int, to: Int, count: Int) {
+        self.from = from
+        self.to = to
+        self.count = count
+    }
+    
+    func `do`(poker: Poker) -> Bool {
+        return canPicker(poker: poker) && canMoveTo(poker: poker)
+    }
+    
+    private func canPicker(poker: Poker) -> Bool {
+        let size = poker.deskArea[from].count - count
+        let cards = Array.init(poker.deskArea[from][size...])
+        var last = cards[0]
+        if !last.mode {
+            return false
+        }
+        for i in 1..<cards.count {
+            if !cards[i].mode {
+                return false
+            }
+            if cards[i].suit != last.suit {
+                return false
+            }
+            if cards[i].point - last.point != -1 {
+                return false
+            }
+            last = cards[i]
+        }
+        return true
+    }
+    
+    private func canMoveTo(poker: Poker) -> Bool {
+        if poker.deskArea[to].isEmpty {
+            return true
+        }
+        if poker.deskArea[to].last!.point != poker.deskArea[from][poker.deskArea[from].count - count].point + 1 {
+            return false
+        }
         return true
     }
 }
