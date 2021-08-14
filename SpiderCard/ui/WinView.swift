@@ -46,7 +46,7 @@ class WinView: NSView {
         
         let rocket = CAEmitterCell.init()
         
-        rocket.birthRate        = 3
+        rocket.birthRate        = 1
         rocket.lifetime         = 1.02
         rocket.emissionLongitude = CGFloat(Double.pi * 1)
         rocket.velocity         = 400
@@ -66,19 +66,20 @@ class WinView: NSView {
         fire.lifetime           = 0.1
 
         let spark = CAEmitterCell.init()
-        spark.birthRate         = 2000
-        spark.velocity          = 150
+        spark.birthRate         = 5000
+        spark.velocity          = 200
+        spark.velocityRange     = 100
         spark.emissionRange     = CGFloat(2 * Double.pi)
-        spark.yAcceleration     = 75
-        spark.lifetime          = 1.5
+        spark.yAcceleration     = -15
+        spark.lifetime          = 3
         spark.contents          = NSImage.init(named: "fire")?.cgImage()
         spark.color             = NSColor.randomColor().cgColor
         spark.redRange          = 1.0
         spark.greenRange        = 1.0
         spark.blueRange         = 1.0
         spark.scale             = 0.25
-        spark.spin              = CGFloat(2 * Double.pi)
-        spark.spinRange         = CGFloat(2 * Double.pi)
+//        spark.spin              = CGFloat(2 * Double.pi)
+//        spark.spinRange         = CGFloat(2 * Double.pi)
 
         fireworksEmitter.emitterCells   = [rocket]
         rocket.emitterCells             = [fire]

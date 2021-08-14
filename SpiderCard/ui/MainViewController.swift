@@ -19,6 +19,7 @@ struct RefreshArea: OptionSet {
 
 class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaViewDelegate {
     
+    static let TEST_WIN_ANIMATION = false
     @IBOutlet weak var backgroundImageView: NSImageView!
     @IBOutlet weak var undoMenuItem: NSMenuItem!
     var deskAreaView: DeskAreaView?
@@ -71,7 +72,11 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         super.viewDidLoad()
         // Do view setup here.
         
-        newGame()
+        if !MainViewController.TEST_WIN_ANIMATION {
+            newGame()
+        } else {
+            addWinView()
+        }
         
         actionsObservation = GameManager.instance.observe(\.poker.actions, options: .new, changeHandler: { (obj, value) in
             if let actions = value.newValue {
@@ -158,23 +163,18 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         if GameManager.instance.isFinished() {
             AudioPlayer.instance().play(type: .success)
             scoreAreaView?.stopTimer()
-//            let alert = NSAlert.init()
-//            alert.alertStyle = .warning
-//            alert.addButton(withTitle: "确定")
-//            alert.messageText = "恭喜"
-//            alert.informativeText = "你赢了!!!再来一局!!"
-//            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
-//                if returnCode == .alertFirstButtonReturn {
-//                    self.newGame()
-//                    winView?.stopAnimation()
-//                }
-//            }
-            winView = WinView.init(frame: CGRect.init(x: 0,
-                                                      y: Const.FINISHED_AREA_VIEW_HEIGHT + Const.BOTTOM_MARGIN,
-                                                      width: self.view.bounds.width,
-                                                      height: self.view.bounds.height - Const.FINISHED_AREA_VIEW_HEIGHT - Const.BOTTOM_MARGIN))
-            self.view.addSubview(winView!)
-            winView!.startAnimation()
+
+            addWinView()
         }
+    }
+    
+    func addWinView() {
+        winView?.removeFromSuperview()
+        winView = WinView.init(frame: CGRect.init(x: 0,
+                                                  y: Const.FINISHED_AREA_VIEW_HEIGHT + Const.BOTTOM_MARGIN,
+                                                  width: self.view.bounds.width,
+                                                  height: self.view.bounds.height - Const.FINISHED_AREA_VIEW_HEIGHT - Const.BOTTOM_MARGIN))
+        self.view.addSubview(winView!)
+        winView!.startAnimation()
     }
 }
