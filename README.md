@@ -2,20 +2,6 @@
 
 仿 `Windows` 经典单机游戏 `蜘蛛纸牌`
 
-## 申明
-
-竟然没想到，如此一个半成品竟然被拿去上架`App Store`了，真是荣幸啊！但是兄弟，你好歹打个招呼啊。
-原本只是做出来供大家消遣的，没想到竟然发生这样的事情。
-已经添加开源协议，本项目服从`GPL`协议，如果不知道什么是`GPL`请自行百度。
-
-以下是证据：
-
-![image](./images/shot_copy_1.jpg)
-
-![image](./images/shot_copy_2.jpg)
-
-![image](./images/shot_copy_3.jpg)
-
 
 ## 已完成
 
