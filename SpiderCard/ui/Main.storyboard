@@ -60,18 +60,6 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="帮助" id="wpr-3q-Mcd">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="帮助" systemMenu="help" id="F2S-fz-NVQ">
-                                    <items>
-                                        <menuItem title="帮助" keyEquivalent="?" id="FKE-Sm-Kum">
-                                            <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -114,7 +102,7 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5s-5a-nRY">
                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="700"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="background" id="NdY-UE-ZO2"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="NdY-UE-ZO2"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -133,7 +121,4 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background" width="59" height="59"/>
-    </resources>
 </document>

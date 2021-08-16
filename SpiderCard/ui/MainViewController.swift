@@ -72,6 +72,9 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         super.viewDidLoad()
         // Do view setup here.
         
+        backgroundImageView.wantsLayer = true
+        backgroundImageView.layer?.backgroundColor = NSColor.init(patternImage: NSImage.init(named: "background")!).cgColor
+        
         if !MainViewController.TEST_WIN_ANIMATION {
             newGame()
         } else {
