@@ -262,6 +262,7 @@ class Wash: Action {
 
         // 打乱
         all.shuffle()
+        all.shuffle()
         // 刚开始分配54张牌 = 4 * 6 + 6 * 5
         for i in 0...53 {
             let column = i % 10
