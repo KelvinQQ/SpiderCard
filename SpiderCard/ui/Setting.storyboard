@@ -138,7 +138,7 @@
                             <box title="提示音设置" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-U0-iV1">
                                 <rect key="frame" x="253" y="65" width="148" height="154"/>
                                 <view key="contentView" id="bOX-UL-ZZo">
-                                    <rect key="frame" x="3" y="3" width="141" height="134"/>
+                                    <rect key="frame" x="3" y="3" width="142" height="130"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-dg-rHV">
@@ -148,7 +148,7 @@
                                                     <rect key="frame" x="-2" y="66" width="76" height="18"/>
                                                     <buttonCell key="cell" type="check" title="游戏开始" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Yn7-YG-Q9U">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="soundAction:" target="ZY0-80-0HK" id="Rsm-5q-YfW"/>
@@ -158,7 +158,7 @@
                                                     <rect key="frame" x="-2" y="32" width="76" height="18"/>
                                                     <buttonCell key="cell" type="check" title="游戏过程" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="74H-yY-3qc">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="soundAction:" target="ZY0-80-0HK" id="kNE-2u-cmu"/>
@@ -168,7 +168,7 @@
                                                     <rect key="frame" x="-2" y="-2" width="76" height="18"/>
                                                     <buttonCell key="cell" type="check" title="游戏胜利" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qi2-sy-tAd">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="soundAction:" target="ZY0-80-0HK" id="ubh-gB-31R"/>
@@ -196,7 +196,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="cYa-Vr-Mjx"/>
                                 </constraints>
-                                <font key="titleFont" size="15" name=".PingFangSC-Regular"/>
+                                <font key="titleFont" metaFont="system" size="15"/>
                             </box>
                         </subviews>
                         <constraints>

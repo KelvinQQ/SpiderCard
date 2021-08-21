@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="q5T-TU-ERZ">
+            <objects>
+                <windowController id="70R-kA-Wrq" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="5ME-6I-dPc">
+                        <windowStyleMask key="styleMask" titled="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <view key="contentView" id="ene-hX-iON">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="70R-kA-Wrq" id="jw6-Pr-uol"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="5Ug-dT-W2P" kind="relationship" relationship="window.shadowedContentViewController" id="hbc-26-aZu"/>
+                    </connections>
+                </windowController>
+                <customObject id="GJr-bk-Emw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-621" y="178"/>
+        </scene>
+        <!--Update View Controller-->
+        <scene sceneID="2dg-Dr-b1x">
+            <objects>
+                <viewController storyboardIdentifier="UpdateViewController" id="5Ug-dT-W2P" customClass="UpdateViewController" customModule="蜘蛛纸牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Lif-tn-U68">
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="219"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-jw-02M">
+                                <rect key="frame" x="169" y="170" width="58" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="更新提示" id="WSa-rp-g2j">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="100" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWL-gK-9hp">
+                                <rect key="frame" x="93" y="20" width="210" height="29"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-MX-bUj">
+                                        <rect key="frame" x="-6" y="1" width="67" height="32"/>
+                                        <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Yq-qI-aHt">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="cancelAction:" target="5Ug-dT-W2P" id="bJd-tv-CcA"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-NZ-OJY">
+                                        <rect key="frame" x="149" y="1" width="67" height="32"/>
+                                        <buttonCell key="cell" type="push" title="下载" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VvO-qy-EOe">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="confirmAction:" target="5Ug-dT-W2P" id="BNW-MJ-wBM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGa-DQ-pTf">
+                                <rect key="frame" x="50" y="69" width="296" height="81"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="y9z-s1-hBC">
+                                    <rect key="frame" x="0.0" y="0.0" width="296" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="kew-Ep-tO6">
+                                            <rect key="frame" x="0.0" y="0.0" width="296" height="81"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <size key="minSize" width="296" height="81"/>
+                                            <size key="maxSize" width="380" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示温馨提示">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="1hT-eO-dwH">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="q7O-PE-0xa">
+                                    <rect key="frame" x="280" y="0.0" width="16" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="t2m-jw-02M" firstAttribute="centerX" secondItem="Lif-tn-U68" secondAttribute="centerX" id="6Ke-I3-KXk"/>
+                            <constraint firstItem="t2m-jw-02M" firstAttribute="top" secondItem="Lif-tn-U68" secondAttribute="top" constant="33" id="E6A-b9-sxz"/>
+                            <constraint firstAttribute="trailing" secondItem="eGa-DQ-pTf" secondAttribute="trailing" constant="50" id="FSI-md-Yw9"/>
+                            <constraint firstItem="eGa-DQ-pTf" firstAttribute="top" secondItem="t2m-jw-02M" secondAttribute="bottom" priority="900" constant="20" id="FZH-pd-sL9"/>
+                            <constraint firstItem="eGa-DQ-pTf" firstAttribute="centerY" secondItem="Lif-tn-U68" secondAttribute="centerY" id="H0g-jQ-Qnp"/>
+                            <constraint firstItem="UWL-gK-9hp" firstAttribute="top" secondItem="eGa-DQ-pTf" secondAttribute="bottom" priority="900" constant="20" id="JlQ-DM-hjO"/>
+                            <constraint firstAttribute="bottom" secondItem="UWL-gK-9hp" secondAttribute="bottom" constant="20" id="XY6-rs-wZE"/>
+                            <constraint firstItem="eGa-DQ-pTf" firstAttribute="leading" secondItem="Lif-tn-U68" secondAttribute="leading" constant="50" id="lUR-Ms-FEu"/>
+                            <constraint firstItem="UWL-gK-9hp" firstAttribute="centerX" secondItem="Lif-tn-U68" secondAttribute="centerX" id="nEa-Ij-Gxq"/>
+                            <constraint firstItem="eGa-DQ-pTf" firstAttribute="centerX" secondItem="Lif-tn-U68" secondAttribute="centerX" id="zPY-0c-vdq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="summaryTextView" destination="kew-Ep-tO6" id="2jC-rE-pSW"/>
+                    </connections>
+                </viewController>
+                <customObject id="woi-Lc-NLb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="154.5"/>
+        </scene>
+    </scenes>
+</document>

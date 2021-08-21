@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import SwiftyJSON
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(closeWindow),
                                                name: NSWindow.willCloseNotification,
                                                object: nil)
+        
+        
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

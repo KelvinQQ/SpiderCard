@@ -6,13 +6,14 @@
 //
 
 import Cocoa
+import WebKit
 
 class AboutViewController: NSViewController {
 
     @IBOutlet weak var versionLabel: NSTextField!
 
     @IBAction func starAction(_ sender: NSButton) {
-        NSWorkspace.shared.open(URL.init(string: "https://github.com/HistoryZhang/SpiderCard")!)
+        NSWorkspace.shared.open(URL.init(string: "https://github.com/KelvinQQ/SpiderCard")!)
     }
     
     @IBAction func dismissAction(_ sender: NSButton) {

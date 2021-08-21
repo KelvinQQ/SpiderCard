@@ -72,6 +72,8 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         super.viewDidLoad()
         // Do view setup here.
         
+        checkUpdate()
+        
         backgroundImageView.wantsLayer = true
         backgroundImageView.layer?.backgroundColor = NSColor.init(patternImage: NSImage.init(named: "background")!).cgColor
         
@@ -179,5 +181,26 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
                                                   height: self.view.bounds.height - Const.FINISHED_AREA_VIEW_HEIGHT - Const.BOTTOM_MARGIN))
         self.view.addSubview(winView!)
         winView!.startAnimation()
+    }
+    
+    private func checkUpdate() {
+        NetworkManager.instance()
+            .checkUpdate { (result) in
+                guard let versionCode = result["versionCode"].int else {
+                    return
+                }
+                guard let currentCode = Int(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0") else {
+                    return
+                }
+                if currentCode < versionCode {
+                    let updateVc = NSStoryboard.init(name: "Update", bundle: nil).instantiateController(withIdentifier: "UpdateViewController") as! UpdateViewController
+                    updateVc.updateBean = UpdateBean.init(summary: result["summary"].string, url: result["url"].string)
+                    self.presentAsSheet(updateVc)
+                }
+                
+        }
+        failure: { (error) in
+            
+        }
     }
 }

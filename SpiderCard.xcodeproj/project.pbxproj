@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8404A69626CD493A00EAEBAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A69526CD493A00EAEBAF /* NetworkManager.swift */; };
+		8404A6A526CFE49200EAEBAF /* Update.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6A426CFE49200EAEBAF /* Update.storyboard */; };
+		8404A6A826CFE4B100EAEBAF /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A6A726CFE4B100EAEBAF /* UpdateViewController.swift */; };
+		8404A6AB26CFEB6D00EAEBAF /* UpdateBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404A6AA26CFEB6D00EAEBAF /* UpdateBean.swift */; };
+		8404A6BB26CFF2D700EAEBAF /* putdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B226CFF2D700EAEBAF /* putdown.wav */; };
+		8404A6BC26CFF2D700EAEBAF /* deal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B326CFF2D700EAEBAF /* deal.wav */; };
+		8404A6BD26CFF2D700EAEBAF /* no_tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B426CFF2D700EAEBAF /* no_tip.wav */; };
+		8404A6BE26CFF2D700EAEBAF /* pickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B526CFF2D700EAEBAF /* pickup.wav */; };
+		8404A6BF26CFF2D700EAEBAF /* tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B626CFF2D700EAEBAF /* tip.wav */; };
+		8404A6C026CFF2D700EAEBAF /* firework.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B726CFF2D700EAEBAF /* firework.wav */; };
+		8404A6C126CFF2D700EAEBAF /* launch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B826CFF2D700EAEBAF /* launch.wav */; };
+		8404A6C226CFF2D700EAEBAF /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6B926CFF2D700EAEBAF /* success.wav */; };
+		8404A6C326CFF2D700EAEBAF /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 8404A6BA26CFF2D700EAEBAF /* Credits.html */; };
 		840D37E326BD5E9500A8FFD3 /* TipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D37E226BD5E9500A8FFD3 /* TipInfo.swift */; };
-		84ADFB5F26B65E10000A93E5 /* putdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5726B65E10000A93E5 /* putdown.wav */; };
-		84ADFB6026B65E10000A93E5 /* deal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5826B65E10000A93E5 /* deal.wav */; };
-		84ADFB6126B65E10000A93E5 /* no_tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5926B65E10000A93E5 /* no_tip.wav */; };
-		84ADFB6226B65E10000A93E5 /* pickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5A26B65E10000A93E5 /* pickup.wav */; };
-		84ADFB6326B65E10000A93E5 /* tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5B26B65E10000A93E5 /* tip.wav */; };
-		84ADFB6426B65E10000A93E5 /* firework.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5C26B65E10000A93E5 /* firework.wav */; };
-		84ADFB6526B65E10000A93E5 /* launch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5D26B65E10000A93E5 /* launch.wav */; };
-		84ADFB6626B65E10000A93E5 /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFB5E26B65E10000A93E5 /* success.wav */; };
 		84ADFB6926B65E25000A93E5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFB6826B65E25000A93E5 /* AudioPlayer.swift */; };
 		84E4975A26B5617F0023AB1B /* Poker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974326B5617F0023AB1B /* Poker.swift */; };
 		84E4975B26B5617F0023AB1B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4974426B5617F0023AB1B /* Card.swift */; };
@@ -38,19 +43,27 @@
 		84E4976C26B561800023AB1B /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975726B5617F0023AB1B /* NSView+Extension.swift */; };
 		84E4976D26B561800023AB1B /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975826B5617F0023AB1B /* Preference.swift */; };
 		84E4976E26B561800023AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975926B5617F0023AB1B /* AppDelegate.swift */; };
+		A0EC9142CCC2404F6A080BB4 /* Pods_SpiderCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA27B621F39122ED9BF048 /* Pods_SpiderCard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D94CBDA83A0573419BA84EF /* Pods-SpiderCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiderCard.debug.xcconfig"; path = "Target Support Files/Pods-SpiderCard/Pods-SpiderCard.debug.xcconfig"; sourceTree = "<group>"; };
+		5CB600AF07CB8BF1120556A7 /* Pods-SpiderCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiderCard.release.xcconfig"; path = "Target Support Files/Pods-SpiderCard/Pods-SpiderCard.release.xcconfig"; sourceTree = "<group>"; };
+		8404A69526CD493A00EAEBAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8404A6A426CFE49200EAEBAF /* Update.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Update.storyboard; sourceTree = "<group>"; };
+		8404A6A726CFE4B100EAEBAF /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		8404A6AA26CFEB6D00EAEBAF /* UpdateBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBean.swift; sourceTree = "<group>"; };
+		8404A6B226CFF2D700EAEBAF /* putdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = putdown.wav; sourceTree = "<group>"; };
+		8404A6B326CFF2D700EAEBAF /* deal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = deal.wav; sourceTree = "<group>"; };
+		8404A6B426CFF2D700EAEBAF /* no_tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = no_tip.wav; sourceTree = "<group>"; };
+		8404A6B526CFF2D700EAEBAF /* pickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pickup.wav; sourceTree = "<group>"; };
+		8404A6B626CFF2D700EAEBAF /* tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tip.wav; sourceTree = "<group>"; };
+		8404A6B726CFF2D700EAEBAF /* firework.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = firework.wav; sourceTree = "<group>"; };
+		8404A6B826CFF2D700EAEBAF /* launch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = launch.wav; sourceTree = "<group>"; };
+		8404A6B926CFF2D700EAEBAF /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
+		8404A6BA26CFF2D700EAEBAF /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		840D37E226BD5E9500A8FFD3 /* TipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInfo.swift; sourceTree = "<group>"; };
 		843A33FF26A1C0FF00782247 /* 蜘蛛纸牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "蜘蛛纸牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84ADFB5726B65E10000A93E5 /* putdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = putdown.wav; sourceTree = "<group>"; };
-		84ADFB5826B65E10000A93E5 /* deal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = deal.wav; sourceTree = "<group>"; };
-		84ADFB5926B65E10000A93E5 /* no_tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = no_tip.wav; sourceTree = "<group>"; };
-		84ADFB5A26B65E10000A93E5 /* pickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pickup.wav; sourceTree = "<group>"; };
-		84ADFB5B26B65E10000A93E5 /* tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tip.wav; sourceTree = "<group>"; };
-		84ADFB5C26B65E10000A93E5 /* firework.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = firework.wav; sourceTree = "<group>"; };
-		84ADFB5D26B65E10000A93E5 /* launch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = launch.wav; sourceTree = "<group>"; };
-		84ADFB5E26B65E10000A93E5 /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
 		84ADFB6826B65E25000A93E5 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		84E4974326B5617F0023AB1B /* Poker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
 		84E4974426B5617F0023AB1B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -73,6 +86,7 @@
 		84E4975726B5617F0023AB1B /* NSView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
 		84E4975826B5617F0023AB1B /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		84E4975926B5617F0023AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8FBA27B621F39122ED9BF048 /* Pods_SpiderCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpiderCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +94,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EC9142CCC2404F6A080BB4 /* Pods_SpiderCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B2759CEB9595CD730B412D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D94CBDA83A0573419BA84EF /* Pods-SpiderCard.debug.xcconfig */,
+				5CB600AF07CB8BF1120556A7 /* Pods-SpiderCard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E947C6BB6C839496EE60A19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA27B621F39122ED9BF048 /* Pods_SpiderCard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8404A6B026CFF2D700EAEBAF /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				8404A6B126CFF2D700EAEBAF /* audio */,
+				8404A6BA26CFF2D700EAEBAF /* Credits.html */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		8404A6B126CFF2D700EAEBAF /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				8404A6B226CFF2D700EAEBAF /* putdown.wav */,
+				8404A6B326CFF2D700EAEBAF /* deal.wav */,
+				8404A6B426CFF2D700EAEBAF /* no_tip.wav */,
+				8404A6B526CFF2D700EAEBAF /* pickup.wav */,
+				8404A6B626CFF2D700EAEBAF /* tip.wav */,
+				8404A6B726CFF2D700EAEBAF /* firework.wav */,
+				8404A6B826CFF2D700EAEBAF /* launch.wav */,
+				8404A6B926CFF2D700EAEBAF /* success.wav */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		843A33F626A1C0FF00782247 = {
 			isa = PBXGroup;
 			children = (
 				843A340126A1C0FF00782247 /* SpiderCard */,
 				843A340026A1C0FF00782247 /* Products */,
+				5B2759CEB9595CD730B412D3 /* Pods */,
+				5E947C6BB6C839496EE60A19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,27 +165,12 @@
 			children = (
 				84E4975926B5617F0023AB1B /* AppDelegate.swift */,
 				84E4974826B5617F0023AB1B /* Assets.xcassets */,
-				84ADFB5626B65E10000A93E5 /* audio */,
+				8404A6B026CFF2D700EAEBAF /* resource */,
 				84E4974226B5617F0023AB1B /* manager */,
 				84E4974926B5617F0023AB1B /* ui */,
 				84E4975626B5617F0023AB1B /* util */,
 			);
 			path = SpiderCard;
-			sourceTree = "<group>";
-		};
-		84ADFB5626B65E10000A93E5 /* audio */ = {
-			isa = PBXGroup;
-			children = (
-				84ADFB5726B65E10000A93E5 /* putdown.wav */,
-				84ADFB5826B65E10000A93E5 /* deal.wav */,
-				84ADFB5926B65E10000A93E5 /* no_tip.wav */,
-				84ADFB5A26B65E10000A93E5 /* pickup.wav */,
-				84ADFB5B26B65E10000A93E5 /* tip.wav */,
-				84ADFB5C26B65E10000A93E5 /* firework.wav */,
-				84ADFB5D26B65E10000A93E5 /* launch.wav */,
-				84ADFB5E26B65E10000A93E5 /* success.wav */,
-			);
-			path = audio;
 			sourceTree = "<group>";
 		};
 		84E4974226B5617F0023AB1B /* manager */ = {
@@ -140,6 +183,8 @@
 				84E4974726B5617F0023AB1B /* Action.swift */,
 				84ADFB6826B65E25000A93E5 /* AudioPlayer.swift */,
 				840D37E226BD5E9500A8FFD3 /* TipInfo.swift */,
+				8404A69526CD493A00EAEBAF /* NetworkManager.swift */,
+				8404A6AA26CFEB6D00EAEBAF /* UpdateBean.swift */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -159,6 +204,8 @@
 				84E4974B26B5617F0023AB1B /* SettingViewController.swift */,
 				84E4974A26B5617F0023AB1B /* WaitingAreaView.swift */,
 				84E4975026B5617F0023AB1B /* WinView.swift */,
+				8404A6A426CFE49200EAEBAF /* Update.storyboard */,
+				8404A6A726CFE4B100EAEBAF /* UpdateViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -179,10 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 843A340F26A1C10200782247 /* Build configuration list for PBXNativeTarget "SpiderCard" */;
 			buildPhases = (
+				B24BE60CF3A77C29904CF621 /* [CP] Check Pods Manifest.lock */,
 				843A33FB26A1C0FF00782247 /* Sources */,
 				843A33FC26A1C0FF00782247 /* Frameworks */,
 				843A33FD26A1C0FF00782247 /* Resources */,
 				84ADFB4126B6390A000A93E5 /* Run Script */,
+				7C4F2043B086D0F2B3C5E693 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,24 +280,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84ADFB6026B65E10000A93E5 /* deal.wav in Resources */,
+				8404A6BC26CFF2D700EAEBAF /* deal.wav in Resources */,
+				8404A6C126CFF2D700EAEBAF /* launch.wav in Resources */,
 				84E4976826B561800023AB1B /* Main.storyboard in Resources */,
-				84ADFB6526B65E10000A93E5 /* launch.wav in Resources */,
-				84ADFB6226B65E10000A93E5 /* pickup.wav in Resources */,
-				84ADFB6626B65E10000A93E5 /* success.wav in Resources */,
-				84ADFB6326B65E10000A93E5 /* tip.wav in Resources */,
-				84ADFB6126B65E10000A93E5 /* no_tip.wav in Resources */,
-				84ADFB6426B65E10000A93E5 /* firework.wav in Resources */,
+				8404A6BB26CFF2D700EAEBAF /* putdown.wav in Resources */,
+				8404A6BE26CFF2D700EAEBAF /* pickup.wav in Resources */,
+				8404A6C026CFF2D700EAEBAF /* firework.wav in Resources */,
+				8404A6C226CFF2D700EAEBAF /* success.wav in Resources */,
+				8404A6A526CFE49200EAEBAF /* Update.storyboard in Resources */,
+				8404A6BF26CFF2D700EAEBAF /* tip.wav in Resources */,
 				84E4975F26B5617F0023AB1B /* Assets.xcassets in Resources */,
+				8404A6C326CFF2D700EAEBAF /* Credits.html in Resources */,
 				84E4976A26B561800023AB1B /* About.storyboard in Resources */,
-				84ADFB5F26B65E10000A93E5 /* putdown.wav in Resources */,
 				84E4976226B5617F0023AB1B /* Setting.storyboard in Resources */,
+				8404A6BD26CFF2D700EAEBAF /* no_tip.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7C4F2043B086D0F2B3C5E693 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpiderCard/Pods-SpiderCard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpiderCard/Pods-SpiderCard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpiderCard/Pods-SpiderCard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84ADFB4126B6390A000A93E5 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +335,28 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ $CONFIGURATION == Release ]; then\n    buildNumber=`date +\"%Y%m%d%H%M\"`\n    /usr/libexec/PlistBuddy -c \"Set CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nfi\n";
 		};
+		B24BE60CF3A77C29904CF621 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpiderCard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -279,13 +369,16 @@
 				84E4976C26B561800023AB1B /* NSView+Extension.swift in Sources */,
 				84E4976426B5617F0023AB1B /* CardView.swift in Sources */,
 				84E4975D26B5617F0023AB1B /* GameManager.swift in Sources */,
+				8404A6A826CFE4B100EAEBAF /* UpdateViewController.swift in Sources */,
 				84E4975B26B5617F0023AB1B /* Card.swift in Sources */,
 				84E4976726B561800023AB1B /* DeskAreaView.swift in Sources */,
 				84E4975E26B5617F0023AB1B /* Action.swift in Sources */,
 				84E4975C26B5617F0023AB1B /* Const.swift in Sources */,
 				84E4976626B561800023AB1B /* WinView.swift in Sources */,
 				84E4976D26B561800023AB1B /* Preference.swift in Sources */,
+				8404A6AB26CFEB6D00EAEBAF /* UpdateBean.swift in Sources */,
 				84ADFB6926B65E25000A93E5 /* AudioPlayer.swift in Sources */,
+				8404A69626CD493A00EAEBAF /* NetworkManager.swift in Sources */,
 				84E4976126B5617F0023AB1B /* SettingViewController.swift in Sources */,
 				84E4976B26B561800023AB1B /* AboutViewController.swift in Sources */,
 				84E4976326B5617F0023AB1B /* ScoreAreaView.swift in Sources */,
@@ -350,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -405,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -416,6 +509,7 @@
 		};
 		843A341026A1C10200782247 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D94CBDA83A0573419BA84EF /* Pods-SpiderCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -429,7 +523,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
@@ -440,6 +534,7 @@
 		};
 		843A341126A1C10200782247 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB600AF07CB8BF1120556A7 /* Pods-SpiderCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
