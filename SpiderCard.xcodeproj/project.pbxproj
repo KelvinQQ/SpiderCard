@@ -40,7 +40,7 @@
 		84E4976926B561800023AB1B /* FinishedAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975326B5617F0023AB1B /* FinishedAreaView.swift */; };
 		84E4976A26B561800023AB1B /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E4975426B5617F0023AB1B /* About.storyboard */; };
 		84E4976B26B561800023AB1B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975526B5617F0023AB1B /* AboutViewController.swift */; };
-		84E4976C26B561800023AB1B /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975726B5617F0023AB1B /* NSView+Extension.swift */; };
+		84E4976C26B561800023AB1B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975726B5617F0023AB1B /* Extension.swift */; };
 		84E4976D26B561800023AB1B /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975826B5617F0023AB1B /* Preference.swift */; };
 		84E4976E26B561800023AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4975926B5617F0023AB1B /* AppDelegate.swift */; };
 		A0EC9142CCC2404F6A080BB4 /* Pods_SpiderCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA27B621F39122ED9BF048 /* Pods_SpiderCard.framework */; };
@@ -83,7 +83,7 @@
 		84E4975326B5617F0023AB1B /* FinishedAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedAreaView.swift; sourceTree = "<group>"; };
 		84E4975426B5617F0023AB1B /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		84E4975526B5617F0023AB1B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		84E4975726B5617F0023AB1B /* NSView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
+		84E4975726B5617F0023AB1B /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		84E4975826B5617F0023AB1B /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		84E4975926B5617F0023AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FBA27B621F39122ED9BF048 /* Pods_SpiderCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpiderCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +213,7 @@
 		84E4975626B5617F0023AB1B /* util */ = {
 			isa = PBXGroup;
 			children = (
-				84E4975726B5617F0023AB1B /* NSView+Extension.swift */,
+				84E4975726B5617F0023AB1B /* Extension.swift */,
 				84E4975826B5617F0023AB1B /* Preference.swift */,
 			);
 			path = util;
@@ -366,7 +366,7 @@
 			files = (
 				84E4976926B561800023AB1B /* FinishedAreaView.swift in Sources */,
 				84E4975A26B5617F0023AB1B /* Poker.swift in Sources */,
-				84E4976C26B561800023AB1B /* NSView+Extension.swift in Sources */,
+				84E4976C26B561800023AB1B /* Extension.swift in Sources */,
 				84E4976426B5617F0023AB1B /* CardView.swift in Sources */,
 				84E4975D26B5617F0023AB1B /* GameManager.swift in Sources */,
 				8404A6A826CFE4B100EAEBAF /* UpdateViewController.swift in Sources */,
@@ -524,7 +524,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -549,7 +549,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsing.SpiderCard;
 				PRODUCT_NAME = "蜘蛛纸牌";
 				SWIFT_VERSION = 5.0;

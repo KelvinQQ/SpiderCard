@@ -30,20 +30,37 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
     
     var actionsObservation: NSKeyValueObservation?
     var scoreObservation: NSKeyValueObservation?
-
+    
     @IBAction func newGameAction(sender: NSMenuItem) {
-
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "确定")
-        alert.addButton(withTitle: "取消")
-        alert.messageText = "提示"
-        alert.informativeText = "清空当前状态重来一局?"
-        alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
-            if returnCode == .alertFirstButtonReturn {
-                self.newGame()
+        
+        let tag = sender.tag
+        switch tag {
+        case 20:
+            Preference.instance.difficult = .easy
+            Preference.instance.save()
+            self.newGame()
+        case 21:
+            Preference.instance.difficult = .middle
+            Preference.instance.save()
+            self.newGame()
+        case 22:
+            Preference.instance.difficult = .hard
+            Preference.instance.save()
+            self.newGame()
+        default:
+            let alert = NSAlert.init()
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "确定")
+            alert.addButton(withTitle: "取消")
+            alert.messageText = "提示"
+            alert.informativeText = "清空当前状态重来一局?"
+            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) in
+                if returnCode == .alertFirstButtonReturn {
+                    self.newGame()
+                }
             }
         }
+        
     }
     
     @IBAction func undoAction(sender: NSMenuItem) {
@@ -52,11 +69,11 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         }
     }
     
-    @IBAction func tipAction(sender: NSMenuItem) {
+//    @IBAction func tipAction(sender: NSMenuItem) {
 //        if let tip = GameManager.instance.nextTip() {
 //            print("\(tip)")
 //        }
-    }
+//    }
     
     @IBAction func aboutAction(sender: NSMenuItem) {
         let aboutVc = NSStoryboard.init(name: "About", bundle: nil).instantiateController(withIdentifier: "AboutViewController") as! AboutViewController

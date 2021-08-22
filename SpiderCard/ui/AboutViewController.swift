@@ -14,6 +14,7 @@ class AboutViewController: NSViewController {
 
     @IBAction func starAction(_ sender: NSButton) {
         NSWorkspace.shared.open(URL.init(string: "https://github.com/KelvinQQ/SpiderCard")!)
+        self.dismiss(self)
     }
     
     @IBAction func dismissAction(_ sender: NSButton) {

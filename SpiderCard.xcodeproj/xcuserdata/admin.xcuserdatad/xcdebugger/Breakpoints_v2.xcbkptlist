@@ -238,8 +238,8 @@
             filePath = "SpiderCard/ui/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "undoAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,25 +254,9 @@
             filePath = "SpiderCard/ui/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "tipAction(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B76F2FF0-13F7-4849-A56D-60A944F9A25E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpiderCard/manager/Action.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "canPicker(poker:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

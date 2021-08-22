@@ -41,12 +41,34 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="游戏" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="新一局" keyEquivalent="n" id="Was-JA-tGl">
+                                        <menuItem title="新一局" tag="10" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
                                                 <action selector="newGameActionWithSender:" target="Ady-hI-5gd" id="IFx-mt-hjT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
+                                        <menuItem title="以难度新开一局" id="8Td-4R-PuZ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="以难度新开一局" id="ayW-Kf-GgV">
+                                                <items>
+                                                    <menuItem title="初级" tag="20" keyEquivalent="1" id="yhb-cH-MW7">
+                                                        <connections>
+                                                            <action selector="newGameActionWithSender:" target="Ady-hI-5gd" id="lO0-aD-rWP"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="中级" tag="21" keyEquivalent="2" id="uN3-4i-cXL">
+                                                        <connections>
+                                                            <action selector="newGameActionWithSender:" target="Ady-hI-5gd" id="3C4-tC-Rrr"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="高级" tag="22" keyEquivalent="3" id="5M0-hL-dLw">
+                                                        <connections>
+                                                            <action selector="newGameActionWithSender:" target="Ady-hI-5gd" id="Mlx-xF-5wy"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" title="以难度新开一局" id="WRV-NI-Exz"/>
                                         <menuItem title="撤销" tag="100" keyEquivalent="z" id="g5s-bu-owi">
                                             <connections>
                                                 <action selector="undoActionWithSender:" target="Ady-hI-5gd" id="VeJ-5C-zGA"/>
