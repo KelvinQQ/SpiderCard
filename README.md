@@ -25,13 +25,13 @@
 
 ## 游戏截图
 
-![image](./images/shot_1.jpg)
+![image](./images/shot_1.png)
 
-![image](./images/shot_2.jpg)
+![image](./images/shot_2.png)
 
-![image](./images/shot_3.jpg)
+![image](./images/shot_3.png)
 
-![image](./images/shot_4.jpg)
+![image](./images/shot_4.png)
 
 ## 游戏下载
 
