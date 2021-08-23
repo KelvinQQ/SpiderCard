@@ -36,11 +36,11 @@
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="ZY0-80-0HK" customClass="SettingViewController" customModule="蜘蛛纸牌" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0Jc-yG-BxI">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="249"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="287"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box title="难易度设置" translatesAutoresizingMaskIntoConstraints="NO" id="CUY-hA-y69">
-                                <rect key="frame" x="27" y="65" width="156" height="154"/>
+                                <rect key="frame" x="27" y="103" width="156" height="154"/>
                                 <view key="contentView" id="dUO-7W-iCF">
                                     <rect key="frame" x="3" y="3" width="150" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
                                 <font key="titleFont" metaFont="system" size="14"/>
                             </box>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="100" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-Z3-Mye">
-                                <rect key="frame" x="109" y="20" width="210" height="21"/>
+                                <rect key="frame" x="85" y="20" width="210" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQd-5P-RHS">
                                         <rect key="frame" x="-6" y="-7" width="67" height="32"/>
@@ -136,7 +136,7 @@
                                 </customSpacing>
                             </stackView>
                             <box title="提示音设置" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-U0-iV1">
-                                <rect key="frame" x="253" y="65" width="148" height="154"/>
+                                <rect key="frame" x="205" y="103" width="148" height="154"/>
                                 <view key="contentView" id="bOX-UL-ZZo">
                                     <rect key="frame" x="3" y="3" width="142" height="130"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,6 +198,56 @@
                                 </constraints>
                                 <font key="titleFont" metaFont="system" size="15"/>
                             </box>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="50" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAh-iK-8Ru">
+                                <rect key="frame" x="30" y="61" width="150" height="21"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ac5-3z-LHK">
+                                        <rect key="frame" x="-2" y="4" width="33" height="14"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="背景" id="cif-mx-VZC">
+                                            <font key="font" size="14" name=".AppleSimplifiedChineseFont-Light"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hob-IM-yps">
+                                        <rect key="frame" x="77" y="-3" width="76" height="25"/>
+                                        <popUpButtonCell key="cell" type="push" title="默认" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="10" imageScaling="proportionallyDown" inset="2" selectedItem="dtw-IE-Slk" id="MGo-Kg-I1l">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="0Xd-kX-SuH">
+                                                <items>
+                                                    <menuItem title="默认" state="on" tag="10" id="dtw-IE-Slk">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="changeBackground:" target="ZY0-80-0HK" id="tu5-HU-Gil"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="美女" tag="11" id="kZn-PD-RwS">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="changeBackground:" target="ZY0-80-0HK" id="618-pf-YwT"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="天空" tag="12" id="qfv-xJ-QH6">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="changeBackground:" target="ZY0-80-0HK" id="2gC-mZ-Nu6"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="VKm-U0-iV1" firstAttribute="top" secondItem="0Jc-yG-BxI" secondAttribute="top" constant="30" id="117-nf-kUd"/>
@@ -206,12 +256,19 @@
                             <constraint firstAttribute="bottom" secondItem="cNt-Z3-Mye" secondAttribute="bottom" constant="20" id="QMS-QZ-Kcr"/>
                             <constraint firstItem="CUY-hA-y69" firstAttribute="leading" secondItem="0Jc-yG-BxI" secondAttribute="leading" constant="30" id="RwL-Y7-r82"/>
                             <constraint firstItem="CUY-hA-y69" firstAttribute="top" secondItem="0Jc-yG-BxI" secondAttribute="top" constant="30" id="eqP-yi-FLw"/>
+                            <constraint firstItem="nAh-iK-8Ru" firstAttribute="leading" secondItem="CUY-hA-y69" secondAttribute="leading" id="idv-tS-W3o"/>
+                            <constraint firstItem="nAh-iK-8Ru" firstAttribute="top" secondItem="CUY-hA-y69" secondAttribute="bottom" constant="25" id="rJv-tZ-20Q"/>
+                            <constraint firstItem="nAh-iK-8Ru" firstAttribute="trailing" secondItem="CUY-hA-y69" secondAttribute="trailing" id="vLI-wG-7Og"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundPopupButton" destination="hob-IM-yps" id="paY-X1-yOC"/>
+                        <outlet property="popupMenu" destination="0Xd-kX-SuH" id="sqH-S0-Ay3"/>
+                    </connections>
                 </viewController>
                 <customObject id="hPW-ts-hCr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="460.5"/>
+            <point key="canvasLocation" x="-244" y="479.5"/>
         </scene>
     </scenes>
 </document>

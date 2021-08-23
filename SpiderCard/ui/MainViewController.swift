@@ -89,10 +89,11 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
         super.viewDidLoad()
         // Do view setup here.
         
+        NotificationCenter.default.addObserver(self, selector: #selector(backgroundChanged(notification:)), name: NSNotification.Name.init("ChangeBackground"), object: nil)
+        
         checkUpdate()
         
-        backgroundImageView.wantsLayer = true
-        backgroundImageView.layer?.backgroundColor = NSColor.init(patternImage: NSImage.init(named: "background")!).cgColor
+        setupBackground(imageName: Preference.instance.background)
         
         if !MainViewController.TEST_WIN_ANIMATION {
             newGame()
@@ -111,6 +112,27 @@ class MainViewController: NSViewController, WaitingAreaViewDelegate, DeskAreaVie
                 self.scoreAreaView?.upate(score: score)
             }
         })
+    }
+    
+    @objc func backgroundChanged(notification: Notification) {
+        guard let backgroundName = notification.userInfo?["backgroundName"] as? String else {
+            setupBackground(imageName: "background")
+            return
+        }
+        setupBackground(imageName: backgroundName)
+    }
+    
+    private func setupBackground(imageName: String) {
+        let background = imageName
+        if background == "background" {
+            backgroundImageView.wantsLayer = true
+            backgroundImageView.layer?.backgroundColor = NSColor.init(patternImage: NSImage.init(named: "background")!).cgColor
+            backgroundImageView.image = nil
+        } else {
+            backgroundImageView.wantsLayer = false
+            let image = NSImage.init(named: background)
+            backgroundImageView.image = image?.resize(size: self.view.bounds.size)
+        }
     }
     
     deinit {

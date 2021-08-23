@@ -31,6 +31,46 @@ extension NSImage {
         }
        return CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
     }
+    
+    func resize(size: CGSize) -> NSImage {
+        let targetFrame = NSRect.init(origin: CGPoint.zero, size: size)
+        let targetImage = NSImage.init(size: size)
+        
+        let sourceSize = self.size
+        let radioH = size.height / sourceSize.height
+        let radioW = size.width / sourceSize.width
+        
+        var cropRect = NSRect.zero
+        if radioH > radioW {
+            cropRect.size.width = floor(size.width / radioH)
+            cropRect.size.height = sourceSize.height
+        } else {
+            cropRect.size.width = sourceSize.width
+            cropRect.size.height = floor(size.height / radioW)
+        }
+        
+        targetImage.lockFocus()
+        self.draw(in: targetFrame,
+                  from: cropRect,
+                  operation: .copy,
+                  fraction: 1.0,
+                  respectFlipped: true,
+                  hints: [.interpolation: NSImageInterpolation.high.rawValue])
+        targetImage.unlockFocus()
+        return targetImage
+    }
+    
+//    func blur(radius: CGFloat = 1.0) -> NSImage? {
+//        let filter = CIFilter(name: "CIGaussianBlur")!
+//        filter.setValue(self, forKey:kCIInputImageKey)
+//        filter.setValue(radius, forKey: kCIInputRadiusKey)
+//        let outputCIImage = filter.outputImage!
+//        let rect = CGRect(origin: CGPoint.zero, size: self.size)
+//        guard let cgImage = CIContext(options: nil).createCGImage(outputCIImage, from: rect) else {
+//            return nil
+//        }
+//        return NSImage.init(cgImage: cgImage, size: self.size)
+//    }
 }
 
 extension NSColor {

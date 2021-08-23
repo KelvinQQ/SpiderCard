@@ -9,8 +9,11 @@ import Cocoa
 
 class SettingViewController: NSViewController {
     
+    @IBOutlet weak var backgroundPopupButton: NSPopUpButton!
+    @IBOutlet weak var popupMenu: NSMenu!
     var selectedDifficult = Preference.instance.difficult
     var selectedSoundTip = Preference.instance.soundTip
+    var selectedBackground = Preference.instance.background
 
     @IBAction func saveAction(_ sender: NSButton) {
         Preference.instance.difficult = selectedDifficult
@@ -30,9 +33,25 @@ class SettingViewController: NSViewController {
     @IBAction func cancelAction(_ sender: NSButton) {
         self.dismiss(self)
     }
+    
     @IBAction func changeDifficultAction(_ sender: NSButton) {
         selectedDifficult = Difficult.init(rawValue: sender.tag)
-        
+    }
+    
+    @IBAction func changeBackground(_ sender: NSMenuItem) {
+        switch sender.tag {
+        case 10:
+            selectedBackground = "background"
+        case 11:
+            selectedBackground = "bg_1"
+        case 12:
+            selectedBackground = "bg_2"
+        default:
+            selectedBackground = "background"
+        }
+        NotificationCenter.default.post(name: NSNotification.Name.init("ChangeBackground"), object: nil, userInfo: ["backgroundName": selectedBackground])
+        Preference.instance.background = selectedBackground
+        Preference.instance.save()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +74,20 @@ class SettingViewController: NSViewController {
         
         let successButton = self.view.viewWithTag(4) as! NSButton
         successButton.state = Preference.instance.soundTip.contains(SoundTip.success) ? .on : .off
+        
+        let tags = ["background": 10,
+                    "bg_1": 11,
+                    "bg_2": 12]
+        let savedBg = Preference.instance.background
+        let selectedTag = tags[savedBg]!
+        backgroundPopupButton.selectItem(at: selectedTag - 10)
+        popupMenu.items.forEach { (item) in
+            if selectedTag == item.tag {
+                item.state = .on
+            } else {
+                item.state = .off
+            }
+        }
     }
     
 }

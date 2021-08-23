@@ -16,5 +16,115 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81089214-9057-4E9A-B7D3-E632DF140DCF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiderCard/ui/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "backgroundChanged(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EF28F99-BD4A-4FF2-B298-B2FA9CDFF0B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiderCard/ui/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "setupBackground(imageName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6CC8F39-8579-4223-9279-55B32B21D883"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiderCard/ui/SettingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "changeBackground(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6CC8F39-8579-4223-9279-55B32B21D883 - 9bc98714df8a1307"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8718;&#x86db;&#x7eb8;&#x724c;.SettingViewController.changeBackground(__C.NSMenuItem) -&gt; ()"
+                  moduleName = "&#x8718;&#x86db;&#x7eb8;&#x724c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Code/SpiderCard/SpiderCard/ui/SettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "105">
+               </Location>
+               <Location
+                  uuid = "F6CC8F39-8579-4223-9279-55B32B21D883 - 9bc98714df8a1307"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8718;&#x86db;&#x7eb8;&#x724c;.SettingViewController.changeBackground(__C.NSMenuItem) -&gt; ()"
+                  moduleName = "&#x8718;&#x86db;&#x7eb8;&#x724c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Code/SpiderCard/SpiderCard/ui/SettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "F6CC8F39-8579-4223-9279-55B32B21D883 - 9bc98714df8a1307"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8718;&#x86db;&#x7eb8;&#x724c;.SettingViewController.changeBackground(__C.NSMenuItem) -&gt; ()"
+                  moduleName = "&#x8718;&#x86db;&#x7eb8;&#x724c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Code/SpiderCard/SpiderCard/ui/SettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  uuid = "F6CC8F39-8579-4223-9279-55B32B21D883 - 9bc98714df8a1307"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x8718;&#x86db;&#x7eb8;&#x724c;.SettingViewController.changeBackground(__C.NSMenuItem) -&gt; ()"
+                  moduleName = "&#x8718;&#x86db;&#x7eb8;&#x724c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Code/SpiderCard/SpiderCard/ui/SettingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "314">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

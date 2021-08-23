@@ -39,9 +39,12 @@ struct SoundTip: OptionSet {
 struct Preference {
     
     var soundTip: SoundTip = SoundTip.init(rawValue: UInt(UserDefaults.standard.integer(forKey: "SOUND_TIP")))
-    var difficult: Difficult = Difficult(rawValue: UserDefaults.standard.integer(forKey: "DIFFICULT")) 
+    var difficult: Difficult = Difficult(rawValue: UserDefaults.standard.integer(forKey: "DIFFICULT"))
+    
+    var background: String = UserDefaults.standard.string(forKey: "BACKGROUND") ?? "background"
     
     func save() {
+        UserDefaults.standard.setValue(background, forKey: "BACKGROUND")
         UserDefaults.standard.setValue(soundTip.rawValue, forKey: "SOUND_TIP")
         UserDefaults.standard.setValue(difficult.rawValue, forKey: "DIFFICULT")
         UserDefaults.standard.synchronize()
